@@ -13,23 +13,29 @@
     </div>
     <div class="floating-partiicles fixed w-full h-full pointer-events-none z-10"></div>
 
-    <nav class="nav">
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <nav class="nav fixed top-8 left-1/2 transform -translate-x-1/2 z-[1000] bg-[#0F0C34]/90 backdrop-blur-[15px] border-2 border-[#A350A3] rounded-[50px] px-6 py-4 shadow-[0_0_30px_rgba(163,80,163,0.3)]">
+        <ul class="nav-links flex gap-5 list-none">
+            <li><a href="#home" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Home</a></li>
+            <li><a href="#about" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">About</a></li>
+            <li><a href="#skills" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Skills</a></li>
+            <li><a href="#projects" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Projects</a></li>
+            <li><a href="#achievements" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Achievements</a></li>
+            <li><a href="#contact" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="glitch" data-text="JULIANA MANCERA"></h1>
+    <section id="home" class="hero h-screen flex items-center justify-center relative text-center">
+        <div class="hero-content z-20 max-w-4xl">
+            <h1 class="glitch text-7xl font-bold uppercase relative text-[#E0B4E0] tracking-[3px] mb-5 shadow-[0_0_20px_rbga(224,180,224,0.5)]" data-text="JULIANA R. MANCERA">JULIANA MANCERA</h1>
             <p class="hero-subtiitle">BS COMPUTER SCIENCE</p>
-            <p class="hero-description">
-            no one nobody can stop me
+            <p class="hero-description text-xl mb-8 text-[#F0E5F0] opacity-0 shadow-[0_0_8px_rbga(240,229,240,0.3)] leading-7">
+            no one nobody can stop me aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
             </p>
+
+            <div class="cta-buttons flex gap-8 justify-center mt-12 opacity-0">
+                <a href="#projects" class="cta-button px-9 py-4 bg-transparent border-2 border-[#A350A3] text-[#E0B4E0] no-underline rounded-[50px] font-bold uppercase tracking-wider relative transition-all duration-[0.4s] overflow-hidden hover:bg-gradient-to-r hover:from-[#A350A3] hover:to-[#C1436D] hover:text-white hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(163,80,163,0.4)]">View My Works"</a>
+                <a href="#contact" class="cta-button px-9 py-4 bg-transparent border-2 border-[#A350A3] text-[#E0B4E0] no-underline rounded-[50px] font-bold uppercase tracking-wider relative transition-all duration-[0.4s] overflow-hidden hover:bg-gradient-to-r hover:from-[#A350A3] hover:to-[#C1436D] hover:text-white hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(163,80,163,0.4)]">Let's Collaborate"</a>
+            </div>
     </section>
 
     <section id="skills" class="skills-section">
