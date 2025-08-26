@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF=8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juliana R. Mancera</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-</head>
+  </head>
 <body class="font-mono bg-space-dark text-white overflow-x-hidden">
     <!-- Animated Background -->
     <div class="fixed inset-0 -z-10">
@@ -17,29 +16,29 @@
     <!--Floating-->
     <div class="floating-partiicles fixed w-full h-full pointer-events-none z-10"></div>
 
-    <!-- not yet done -->
-    <nav class="nav fixed top-8 left-1/2 transform -translate-x-1/2 z-[1000] bg-[#0F0C34]/90 backdrop-blur-[15px] border-2 border-[#A350A3] rounded-[50px] px-6 py-4 shadow-[0_0_30px_rgba(163,80,163,0.3)]">
-        <ul class="nav-links flex gap-5 list-none">
-            <li><a href="#home" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Home</a></li>
-            <li><a href="#about" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">About</a></li>
-            <li><a href="#skills" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Skills</a></li>
-            <li><a href="#projects" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Projects</a></li>
-            <li><a href="#achievements" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Achievements</a></li>
-            <li><a href="#contact" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Contact</a></li>
+    <!-- Navigation -->
+    <nav class="nav fixed top-8 left-1/2 transform -translate-x-1/2 z-50 bg-space-dark/90 backdrop-blur border-2 border-neon-purple rounded-full px-6 py-4 shadow-lg shadow-neon-purple/30">
+        <ul class="flex gap-5 list-none">
+            <li><a href="#home" class="text-light-purple no-underline px-5 py-3 rounded-full transition-all duration-300 font-bold uppercase text-xs tracking-wider hover:bg-gradient-to-r hover:from-neon-purple hover:to-neon-pink hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-purple/40">Home</a></li>
+            <li><a href="#about" class="text-light-purple no-underline px-5 py-3 rounded-full transition-all duration-300 font-bold uppercase text-xs tracking-wider hover:bg-gradient-to-r hover:from-neon-purple hover:to-neon-pink hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-purple/40">About</a></li>
+            <li><a href="#skills" class="text-light-purple no-underline px-5 py-3 rounded-full transition-all duration-300 font-bold uppercase text-xs tracking-wider hover:bg-gradient-to-r hover:from-neon-purple hover:to-neon-pink hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-purple/40">Skills</a></li>
+            <li><a href="#projects" class="text-light-purple no-underline px-5 py-3 rounded-full transition-all duration-300 font-bold uppercase text-xs tracking-wider hover:bg-gradient-to-r hover:from-neon-purple hover:to-neon-pink hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-purple/40">Projects</a></li>
+            <li><a href="#achievements" class="text-light-purple no-underline px-5 py-3 rounded-full transition-all duration-300 font-bold uppercase text-xs tracking-wider hover:bg-gradient-to-r hover:from-neon-purple hover:to-neon-pink hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-purple/40">Achievements</a></li>
+            <li><a href="#contact" class="text-light-purple no-underline px-5 py-3 rounded-full transition-all duration-300 font-bold uppercase text-xs tracking-wider hover:bg-gradient-to-r hover:from-neon-purple hover:to-neon-pink hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-purple/40">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="hero h-screen flex items-center justify-center relative text-center">
+    <section id="home" class="min-h-screen flex items-center justify-center relative text-center">
         <div class="hero-content z-20 max-w-4xl">
-            <h1 class="glitch text-7xl font-bold uppercase relative text-[#E0B4E0] tracking-[3px] mb-5 shadow-[0_0_20px_rbga(224,180,224,0.5)]" data-text="JULIANA R. MANCERA">JULIANA MANCERA</h1>
-            <p class="hero-subtiitle">BS COMPUTER SCIENCE</p>
-            <p class="hero-description text-xl mb-8 text-[#F0E5F0] opacity-0 shadow-[0_0_8px_rbga(240,229,240,0.3)] leading-7">
+            <h1 class="glitch text-6xl md:text-7xl font-bold uppercase relative text-light-purple tracking-widest animate-neon-glow mb-5" data-text="JULIANA R. MANCERA">JULIANA MANCERA</h1>
+            <p class="hero-subtitle text-2xl md:text-3xl my-5 text-light-purple opacity-0 animate-slide-up" style="animation-delay: 0.5s;">BS COMPUTER SCIENCE</p>
+            <p class="hero-description text-lg md:text-xl mb-8 text-pale-purple opacity-0 animate-slide-up leading-relaxed" style="animation-delay: 1s;">
             no one nobody can stop me aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
             </p>
 
-            <div class="cta-buttons flex gap-8 justify-center mt-12 opacity-0">
-                <a href="#projects" class="cta-button px-9 py-4 bg-transparent border-2 border-[#A350A3] text-[#E0B4E0] no-underline rounded-[50px] font-bold uppercase tracking-wider relative transition-all duration-[0.4s] overflow-hidden hover:bg-gradient-to-r hover:from-[#A350A3] hover:to-[#C1436D] hover:text-white hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(163,80,163,0.4)]">View My Works"</a>
-                <a href="#contact" class="cta-button px-9 py-4 bg-transparent border-2 border-[#A350A3] text-[#E0B4E0] no-underline rounded-[50px] font-bold uppercase tracking-wider relative transition-all duration-[0.4s] overflow-hidden hover:bg-gradient-to-r hover:from-[#A350A3] hover:to-[#C1436D] hover:text-white hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(163,80,163,0.4)]">Let's Collaborate"</a>
+            <div class="cta-buttons flex gap-8 justify-center mt-12 opacity-0 animate-slide-up flex-col md:flex-row items-center" style="animation-delay: 1.5s;">
+                <a href="#projects" class="cta-button py-4 px-8 bg-transparent border-2 border-neon-purple text-light-purple no-underline rounded-full font-bold uppercase tracking-wide relative transition-all duration-300 hover:bg-gradient-to-r hover:from-neon-purple hover:to-neon-pink hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-purple/40">View My Works"</a>
+                <a href="#contact" class="cta-button py-4 px-8 bg-transparent border-2 border-neon-purple text-light-purple no-underline rounded-full font-bold uppercase tracking-wide relative transition-all duration-300 hover:bg-gradient-to-r hover:from-neon-purple hover:to-neon-pink hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-purple/40">Let's Collaborate"</a>
             </div>
     </section>
 
@@ -172,8 +171,9 @@
                 <h3 class="text-[#E0B4E0] mb-4 text-xl uppercase">Github</h3>
                 <a href="https://github.com/JulianaMancera" class="text-[#F0E5F0] text-lg">Juliana R. Mancera</a>
             </div> 
-
         </div>
 
-</body>
+        <!--Main js file-->
+        <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
