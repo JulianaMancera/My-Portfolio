@@ -2,144 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF=8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juliana R. Mancera</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-mono bg-[#0F0C24] text-white overflow-x-hidden leading-relaxed relative">
-    <div class="space-bg fixed top-0 left-0 w-full h-full -z-10 bg-gradient-radial from-[#1a1347] via-transparent to-[#0F0C24]">
-        <div class="stars absolute w-full h-full"></div>
+<body>
+    <!--loading screen-->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">LOADING...</div>
+        <div class="loading-particles">
+            <div class="loading-particle" style="animation-delay: 0s;"></div>
+            <div class="loading-particle" style="animation-delay: 0.5s;"></div>
+            <div class="loading-particle" style="animation-delay: 1s;"></div>
+            <div class="loading-particle" style="animation-delay: 1.5s;"></div>
+        </div>
     </div>
-    <div class="floating-partiicles fixed w-full h-full pointer-events-none z-10"></div>
 
-    <!-- navigation -->
-    <nav class="nav fixed top-8 left-1/2 transform -translate-x-1/2 z-[1000] bg-[#0F0C34]/90 backdrop-blur-[15px] border-2 border-[#A350A3] rounded-[50px] px-6 py-4 shadow-[0_0_30px_rgba(163,80,163,0.3)]">
-        <ul class="nav-links flex gap-5 list-none">
-            <li><a href="#home" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Home</a></li>
-            <li><a href="#about" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">About</a></li>
-            <li><a href="#skills" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Skills</a></li>
-            <li><a href="#projects" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Projects</a></li>
-            <li><a href="#achievements" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Achievements</a></li>
-            <li><a href="#contact" class="text=[#E0B4E0] no-underline px-5 py-3 rounded-[25px] transition-all duration-[0.4s] relative font-bold uppercase text-m tracking-wider hover:text-white hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(163,80,163,0.4)]">Contact</a></li>
-        </ul>
+    <!---cursor--->
+    <div class="cursor" id="cursor"></div>
+
+    <!--bg-->
+    <div class="space-bg">
+        <div class="stars" id="stars"></div>
+        <div class="matrix-rain" id="matrixRain"></div>
+    </div>
+
+    <!--navigation-->
+    <nav class="nav">
+        <a href="#home" class="nav-item active" data-section="home">HOME</a>
+        <a href="#about" class="nav-item" data-section="about">ABOUT</a>
+        <a href="#skills" class="nav-item" data-section="skills">SKILLS</a>
+        <a href="#projects" class="nav-item" data-section="projects">PROJECTS</a>
+        <a href="#achievements" class="nav-item" data-section="achievements">ACHIEVEMENTS</a>
+        <a href="#contact" class="nav-item" data-section="contact">CONTACT</a>
     </nav>
-
-    <section id="home" class="hero h-screen flex items-center justify-center relative text-center">
-        <div class="hero-content z-20 max-w-4xl">
-            <h1 class="glitch text-7xl font-bold uppercase relative text-[#E0B4E0] tracking-[3px] mb-5 shadow-[0_0_20px_rbga(224,180,224,0.5)]" data-text="JULIANA R. MANCERA">JULIANA MANCERA</h1>
-            <p class="hero-subtiitle">BS COMPUTER SCIENCE</p>
-            <p class="hero-description text-xl mb-8 text-[#F0E5F0] opacity-0 shadow-[0_0_8px_rbga(240,229,240,0.3)] leading-7">
-            no one nobody can stop me aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            </p>
-
-            <div class="cta-buttons flex gap-8 justify-center mt-12 opacity-0">
-                <a href="#projects" class="cta-button px-9 py-4 bg-transparent border-2 border-[#A350A3] text-[#E0B4E0] no-underline rounded-[50px] font-bold uppercase tracking-wider relative transition-all duration-[0.4s] overflow-hidden hover:bg-gradient-to-r hover:from-[#A350A3] hover:to-[#C1436D] hover:text-white hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(163,80,163,0.4)]">View My Works</a>
-                <a href="#contact" class="cta-button px-9 py-4 bg-transparent border-2 border-[#A350A3] text-[#E0B4E0] no-underline rounded-[50px] font-bold uppercase tracking-wider relative transition-all duration-[0.4s] overflow-hidden hover:bg-gradient-to-r hover:from-[#A350A3] hover:to-[#C1436D] hover:text-white hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(163,80,163,0.4)]">Let's Collaborate</a>
-            </div>
-    </section>
-
-    <!-- Placeholder -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-image fade-in">
-                    <div class="profile card">
-                        <div class="avatar">😵‍💫</div>
-                        <h3></h3>
-                        <p></p>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="about-text fade-in">
-                    <h3>About Me</h3>
-                <p></p>
-                </div>
-
-        </div>
-    </section>
-
-    <section id="projects" class="projects-section py-32 relative">
-    <div class="container max-w-6xl mx-auto px-5 relative z-20">
-        <h2 class="section-title text-center text-6xl mb-20 text-[#E0B4E0] uppercase tracking-[2px] relative shadow-[0_0_20px_rgba(224,180,224,0.3)] fade-in">Featured Projects</h2>
-        
-        <div class="projects-grid grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-
-            <!-- 1st -->
-            <div class="project-card bg-[#0F0C24]/90 backdrop-blur-[15px] border-2 border-[#A350A3]/30 rounded-[25px] p-9 relative overflow-hidden transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:shadow-[0_25px_50px_rgba(163,80,163,0.3)] hover:border-[#A350A3] fade-in">
-                <div class="project-content relative z-20">
-                    <div class="project-header text-center mb-6">
-                        <div class="project-image mb-4">
-                            <img src="assets/one.gif" class="project-img" alt="Project 1">
-                        </div>
-                        <div class="project-title text-3xl font-bold text-[#E0B4E0] uppercase">BOCCHI 1</div>
-                    </div>
-                </div>
-                <p class="project-description text-[#F0E5F0] text-base mb-5 leading-relaxed">
-                    I still remember I will forever Backseat secrets we won't ever tell I miss you, double-XL (placeholder)
-                </p>
-                <div class="project-tech flex flex-wrap gap-3 mb-6">
-                    <span class="tech-tag bg-nav/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">Typescript</span>
-                    <span class="tech-tag bg-nav/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">HTML</span>
-                    <span class="tech-tag bg-nav/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">CSS</span>
-                    <span class="tech-tag bg-nav/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">Node.js</span>
-                    <span class="tech-tag bg-nav/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">React</span>
-                    <span class="tech-tag bg-nav/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">Supabase</span>
-                    <span class="tech-tag bg-nav/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">Vercel</span>
-                </div>
-                <div class="project-links flex gap-4 justify-center">
-                    <a href="#" class="project-link px-5 py-3 bg-transparent border-2 border-[#A350A3] text-[#E0B4E0] no-underline rounded-[25px] text-sm font-bold transition-all duration-300 hover:bg-[#A350A3] hover:text-white hover:-translate-y-1">Github</a>
-                </div>
-            </div>
-
-            <!-- 2nd (copy lng sa 1st as placeholder)-->
-            <div class="project-card bg-[#0F0C24]/90 backdrop-blur-[15px] border-2 border-[#A350A3]/30 rounded-[25px] p-9 relative overflow-hidden transition-all duration-500 hover:-translate-y-4 hover:scale-105 hover:shadow-[0_25px_50px_rgba(163,80,163,0.3)] hover:border-[#A350A3] fade-in">
-                <div class="project-content relative z-20">
-                    <div class="project-header text-center mb-6">
-                        <div class="project-image mb-4">
-                            <img src="assets/one.gif" class="project-img" alt="Project 1">
-                        </div>
-                        <div class="project-title text-3xl font-bold text-[#E0B4E0] uppercase">BOCCHI 1</div>
-                    </div>
-                </div>
-                <p class="project-description text-[#F0E5F0] text-base mb-5 leading-relaxed">
-                    I still remember I will forever Backseat secrets we won't ever tell I miss you, double-XL (placeholder)
-                </p>
-                <div class="project-tech flex flex-wrap gap-3 mb-6">
-                    <span class="tech-tag bg-[#A350A3]/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">Typescript</span>
-                    <span class="tech-tag bg-[#A350A3]/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">HTML</span>
-                    <span class="tech-tag bg-[#A350A3]/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">CSS</span>
-                    <span class="tech-tag bg-[#A350A3]/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">Node.js</span>
-                    <span class="tech-tag bg-[#A350A3]/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">React</span>
-                    <span class="tech-tag bg-[#A350A3]/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">Supabase</span>
-                    <span class="tech-tag bg-[#A350A3]/20 text-[#E0B4E0] px-4 py-1 rounded-[20px] text-sm border border-[#A350A3]/30">Vercel</span>
-                </div>
-                <div class="project-links flex gap-4 justify-center">
-                    <a href="#" class="project-link px-5 py-3 bg-transparent border-2 border-[#A350A3] text-[#E0B4E0] no-underline rounded-[25px] text-sm font-bold transition-all duration-300 hover:bg-[#A350A3] hover:text-white hover:-translate-y-1">Github</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2 class="section-title fade-in">My Tech Skills</h2>
-
-            <div class="language-grid">
-                <div class="language-card fade-in">
-                    <div class="card-content">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="achievements" class="achievements-section">
-        <div class="container">
-            <h2 class="section-title fade-in">Achievements and Certifications</h2>
-        </div>
-    </section>
 
     <section id="contact" class="contact-section py-32 text-center">
      <div class="container max-w-6xl mx-auto px-5 relative z-20">
