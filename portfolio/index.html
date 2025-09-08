@@ -1,88 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@ -4,12 +4,13 @@
     <meta charset="UTF=8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juliana R. Mancera</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/portfolio/styles.css">
 </head>
 <body>
     <!--loading screen-->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-logo">LOADING...</div>
+
         <div class="loading-particles">
             <div class="loading-particle" style="animation-delay: 0s;"></div>
             <div class="loading-particle" style="animation-delay: 0.5s;"></div>
-            <div class="loading-particle" style="animation-delay: 1s;"></div>
-            <div class="loading-particle" style="animation-delay: 1.5s;"></div>
-        </div>
-    </div>
-
-    <!---cursor--->
-    <div class="cursor" id="cursor"></div>
-
-    <!--bg-->
-    <div class="space-bg">
-        <div class="stars" id="stars"></div>
-        <div class="matrix-rain" id="matrixRain"></div>
-    </div>
-
-    <!--navigation-->
-    <nav class="nav">
-        <a href="#home" class="nav-item active" data-section="home">HOME</a>
-        <a href="#about" class="nav-item" data-section="about">ABOUT</a>
-        <a href="#skills" class="nav-item" data-section="skills">SKILLS</a>
-        <a href="#projects" class="nav-item" data-section="projects">PROJECTS</a>
-        <a href="#achievements" class="nav-item" data-section="achievements">ACHIEVEMENTS</a>
-        <a href="#contact" class="nav-item" data-section="contact">CONTACT</a>
-    </nav>
-
-    <!--home page-->
-    <section class="section home" id="home">
-        <div class="cosmic-tagline">Crafting immersive digital experiences through code and creativity</div>
-        <h1 class="logo">JULIANA MANCERA</h1>
-        <a href="#projects" class="cta-button">Explore My Work</a>
-        <a href="#contact" class="cta-button">Let's Connect</a>
-
-        <!--effects-->
-        <div class="particle" style="width: 10px; height: 10px; top: 20%; left: 10%; animation-delay: 0s;"></div>
-        <div class="particle" style="width: 8px; height: 8px; top: 60%; left: 80%; animation-delay: 1s;"></div>
-        <div class="particle" style="width: 12px; height: 12px; top: 80%; left: 20%; animation-delay: 2s;"></div>
-        <div class="particle" style="width: 6px; height: 6px; top: 30%; left: 70%; animation-delay: 3s;"></div>
-        <div class="planet-illustration"></div>
+@ -53,9 +54,77 @@
     </section>
 
     <section class="section about" id="about">
+        <div class="container">
+            <h2>ABOUT</h2>
+            <div class="about-content">
+                <div class="profile-pic">JM</div>
+                <div class="about-text">
+                    <h2>WHO AM I?</h2>
+                    <p>I'm Juliana Mancera, a passionate Computer Science student exploring the infinite possibilities of the digital universe. Like a cosmic explorer navigating through galaxies of code, I transform ideas into reality through the power of programming.</p>
+                    <p>My journey through the vast expanse of technology has led me to master multiple programming languages, each one a different star system in my galaxy of knowledge. From web development to software engineering, I'm constantly pushing the boundaries of what's possible.</p>
+                    <p>When I'm not coding, you can find me stargazing at the latest tech trends, contributing to open-source projects, or mentoring fellow cosmic travelers on their coding journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2>SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-card holographic">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-item">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Java</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Typescript</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>PHP</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Dart</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>React.js</span>
+                    </div>
+                </div>
 
+                <div class="skill-card holographic">
+                    <h3>Backend Development</h3>
+                    <div class="skill-item">
+                        <span>Supabase</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Firebase</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Java</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
     </section>
 
+
+    <!--contacts-->
     <section id="contact" class="contact-section py-32 text-center">
      <div class="container max-w-6xl mx-auto px-5 relative z-20">
             <h2 class="section-title text-center text-6xl mb-20 text-[#E0B4E0] uppercase tracking-[2px] relative shadow-[0_0_20px_rgba(224,180,224,0.3)] fade-in">Let's Create Something Amazing</h2>
-            <p class="fade-in text-xl text-[#E0B4E0] max-w-2xl mx-auto">
-                BLAH BLAH BLAH
-            </p>
-        </div> 
-        <div class="contact-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-16">
-            <div class="contact-item p-10 bg-[#0F0C24]/90 border-2 border-[#a350A3]/30 rounded-[20px] transition-all duration-[0.4s] relative overflow-hidden hover:-translate-y-3 hover:scale-105 hover:border-[#A350A3] hover:shadow-[0_20px_40px_rgba(163,80,163,0.3)] fade-in">
-                <div class="contact-icon text-5xl mb-5 text-[#A350A3]">📧</div>
-                <h3 class="text-[#E0B4E0] mb-4 text-xl uppercase">Email</h3>
-                <p class="text-[#F0E5F0] text-lg">real.julianamancera@gmail.com</p>
-            </div> 
-
-            <div class="contact-item p-10 bg-[#0F0C24]/90 border-2 border-[#a350A3]/30 rounded-[20px] transition-all duration-[0.4s] relative overflow-hidden hover:-translate-y-3 hover:scale-105 hover:border-[#A350A3] hover:shadow-[0_20px_40px_rgba(163,80,163,0.3)] fade-in">
-                <div class="contact-icon text-5xl mb-5 text-[#A350A3]">💼</div>
-                <h3 class="text-[#E0B4E0] mb-4 text-xl uppercase">LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/juliana-mancera-84947b309/" class="text-[#F0E5F0] text-lg">Juliana Mancera</a>
-            </div> 
-
-            <div class="contact-item p-10 bg-[#0F0C24]/90 border-2 border-[#a350A3]/30 rounded-[20px] transition-all duration-[0.4s] relative overflow-hidden hover:-translate-y-3 hover:scale-105 hover:border-[#A350A3] hover:shadow-[0_20px_40px_rgba(163,80,163,0.3)] fade-in">
-                <div class="contact-icon text-5xl mb-5 text-[#A350A3]">😺</div>
-                <h3 class="text-[#E0B4E0] mb-4 text-xl uppercase">Github</h3>
-                <a href="https://github.com/JulianaMancera" class="text-[#F0E5F0] text-lg">Juliana R. Mancera</a>
-            </div> 
-
-        </div>
-
-</body>
-</html>
