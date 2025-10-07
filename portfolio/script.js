@@ -1,6 +1,4 @@
-// ========================================
-// CUSTOM CURSOR
-// ========================================
+
 const cursor = document.getElementById('cursor');
 const hoverElements = document.querySelectorAll('a, button, input, textarea');
 
@@ -16,18 +14,14 @@ hoverElements.forEach(el => {
     el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
 });
 
-// ========================================
 // LOADING SCREEN
-// ========================================
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.getElementById('loadingScreen').classList.add('hidden');
     }, 1500);
 });
 
-// ========================================
 // SMOOTH SCROLLING
-// ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -41,9 +35,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ========================================
 // ACTIVE NAVIGATION
-// ========================================
 const sections = document.querySelectorAll('.section');
 const navItems = document.querySelectorAll('.nav-item');
 
@@ -68,9 +60,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ========================================
 // FORM SUBMISSION
-// ========================================
 document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.preventDefault();
     
