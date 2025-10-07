@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF=8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juliana R. Mancera</title>
-    <link rel="stylesheet" href="/portfolio/styles.css">
+    <title>Juliana R. Mancera - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--loading screen-->
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-logo">LOADING...</div>
-
         <div class="loading-particles">
-            <div class="loading-particle" style="animation-delay: 0s;"></div>
-            <div class="loading-particle" style="animation-delay: 0.5s;"></div>
+            <div class="loading-particle"></div>
+            <div class="loading-particle"></div>
+            <div class="loading-particle"></div>
+        </div>
+    </div>
 
-    </section>
-
-    <!-- navigation -->
+    <!-- Navigation -->
     <nav class="nav">
         <a href="#home" class="nav-item active" data-section="home">HOME</a>
         <a href="#about" class="nav-item" data-section="about">ABOUT</a>
@@ -27,14 +30,23 @@
         <a href="#contact" class="nav-item" data-section="contact">CONTACT</a>
     </nav>
 
+    <!-- Home Section -->
+    <section class="section home" id="home">
+        <div class="hero-content">
+            <h1>JULIANA R. MANCERA</h1>
+            <p>Developer | Designer | Creator</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section class="section about" id="about">
         <div class="container">
             <h2>ABOUT</h2>
             <div class="about-content">
                 <div class="profile-pic">JM</div>
                 <div class="about-text">
-                    <h2>WHO AM I?</h2>
-                    <p>aaaaaaaaaaaaaaaaaaa</p>
+                    <h3>WHO AM I?</h3>
+                    <p>I'm a passionate developer with expertise in full-stack development, creating innovative solutions that blend creativity with functionality. With a strong foundation in multiple programming languages and frameworks, I bring ideas to life through clean code and intuitive design.</p>
                 </div>
             </div>
         </div>
@@ -45,57 +57,52 @@
         <div class="container">
             <h2>SKILLS</h2>
             <div class="skills-grid">
-                <div class="skill-card holographic">
+                <div class="skill-card">
                     <h3>Programming Languages</h3>
-                    <div class="skill-item">
-                        <span>Python</span>
-                    </div>
-                    <div class="skill-item">
-                        <span>Java</span>
-                    </div>
-                    <div class="skill-item">
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="skill-item">
-                        <span>Typescript</span>
-                    </div>
-                    <div class="skill-item">
-                        <span>PHP</span>
-                    </div>
-                    <div class="skill-item">
-                        <span>Dart</span>
-                    </div>
-                    <div class="skill-item">
-                        <span>React.js</span>
-                    </div>
+                    <div class="skill-item"><span>Python</span></div>
+                    <div class="skill-item"><span>Java</span></div>
+                    <div class="skill-item"><span>JavaScript</span></div>
+                    <div class="skill-item"><span>TypeScript</span></div>
+                    <div class="skill-item"><span>PHP</span></div>
+                    <div class="skill-item"><span>Dart</span></div>
                 </div>
 
-                <div class="skill-card holographic">
+                <div class="skill-card">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-item"><span>React.js</span></div>
+                    <div class="skill-item"><span>Node.js</span></div>
+                    <div class="skill-item"><span>Flutter</span></div>
+                    <div class="skill-item"><span>Express.js</span></div>
+                </div>
+
+                <div class="skill-card">
                     <h3>Backend Development</h3>
-                    <div class="skill-item">
-                        <span>Supabase</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Firebase</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Java</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>PHP</span>
-                        </div>
-                    </div>
-                </div>
-
+                    <div class="skill-item"><span>Supabase</span></div>
+                    <div class="skill-item"><span>Firebase</span></div>
+                    <div class="skill-item"><span>REST APIs</span></div>
+                    <div class="skill-item"><span>Database Management</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Contact Section -->
+    <!-- Projects Section (Placeholder) -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2>PROJECTS</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.6); margin-top: 30px;">Coming Soon...</p>
+        </div>
+    </section>
+
+    <!-- Achievements Section (Placeholder) -->
+    <section class="section" id="achievements">
+        <div class="container">
+            <h2>ACHIEVEMENTS</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.6); margin-top: 30px;">Coming Soon...</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
             <h2>CONTACT</h2>
@@ -104,11 +111,11 @@
                     <h3>Let's Create Something Amazing</h3>
                     <div class="contact-item">
                         <i>📧</i>
-                        <span>@gmail.com</span>
+                        <span>juliana.mancera@gmail.com</span>
                     </div>
                     <div class="contact-item">
                         <i>📱</i>
-                        <span>+63 90</span>
+                        <span>+63 90XXXXXXXX</span>
                     </div>
                     <div class="contact-item">
                         <i>🌍</i>
@@ -143,5 +150,67 @@
         </div>
     </section>
 
+    <script>
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        const hoverElements = document.querySelectorAll('a, button, input, textarea');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active Navigation
+        const sections = document.querySelectorAll('.section');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-section') === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Message sent! (This is a demo - connect your backend to actually send messages)');
+            e.target.reset();
+        });
+    </script>
 </body>
 </html>
