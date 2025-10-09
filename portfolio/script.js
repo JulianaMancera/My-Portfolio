@@ -60,7 +60,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// FORM SUBMISSION
+// Form submit
 document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.preventDefault();
     
