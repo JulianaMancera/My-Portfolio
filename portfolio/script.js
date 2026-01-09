@@ -224,9 +224,7 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// ========================================
 // PERFORMANCE OPTIMIZATION
-// ========================================
 // Debounce function for scroll events
 function debounce(func, wait = 10) {
     let timeout;
