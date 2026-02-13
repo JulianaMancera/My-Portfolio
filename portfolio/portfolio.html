@@ -4,43 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juliana R. Mancera - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Animated Background -->
-    <div class="bg-animation" id="bgAnimation"></div>
+    <div class="bg-animation" id="bgAnimation">
+        <div class="grid-overlay"></div>
+    </div>
 
     <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
+    <div class="cursor" id="cursor">
+        <div class="cursor-inner"></div>
+    </div>
 
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <div class="loading-logo">LOADING...</div>
-        <div class="loading-particles">
-            <div class="loading-particle"></div>
-            <div class="loading-particle"></div>
-            <div class="loading-particle"></div>
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="glitch" data-text="WHO AM I?">WHO AM I?</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">Initializing Portfolio...</div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="nav">
-        <a href="#home" class="nav-item active" data-section="home">HOME</a>
-        <a href="#about" class="nav-item" data-section="about">ABOUT</a>
-        <a href="#skills" class="nav-item" data-section="skills">SKILLS</a>
-        <a href="#projects" class="nav-item" data-section="projects">PROJECTS</a>
-        <a href="#achievements" class="nav-item" data-section="achievements">ACHIEVEMENTS</a>
-        <a href="#contact" class="nav-item" data-section="contact">CONTACT</a>
+    <nav class="nav" id="mainNav">
+        <div class="nav-logo">JM</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-item active" data-section="home">
+                <span class="nav-number">01</span>
+                <span class="nav-text">HOME</span>
+            </a>
+            <a href="#about" class="nav-item" data-section="about">
+                <span class="nav-number">02</span>
+                <span class="nav-text">ABOUT</span>
+            </a>
+            <a href="#skills" class="nav-item" data-section="skills">
+                <span class="nav-number">03</span>
+                <span class="nav-text">SKILLS</span>
+            </a>
+            <a href="#projects" class="nav-item" data-section="projects">
+                <span class="nav-number">04</span>
+                <span class="nav-text">PROJECTS</span>
+            </a>
+            <a href="#achievements" class="nav-item" data-section="achievements">
+                <span class="nav-number">05</span>
+                <span class="nav-text">ACHIEVEMENTS</span>
+            </a>
+            <a href="#contact" class="nav-item" data-section="contact">
+                <span class="nav-number">06</span>
+                <span class="nav-text">CONTACT</span>
+            </a>
+        </div>
     </nav>
 
     <!-- Home Section -->
     <section class="section home" id="home">
         <div class="hero-content">
-            <h1>JULIANA R. MANCERA</h1>
-            <p>Data Analyst | Software Developer | Web Developer</p>
+            <div class="hero-label">COMPUTER SCIENCE STUDENT</div>
+            <h1 class="hero-title">
+                <span class="title-line">JULIANA MANCERA</span>
+            </h1>
+            <p class="hero-subtitle">Data Analyst • Software Developer • Business Analyst</p>
+            <div class="hero-description">
+                Building scalable, user-friendly systems with expertise in full-stack development, 
+                business analysis, and agile project management.
+            </div>
             <div class="hero-cta">
-                <a href="#projects" class="cta-btn"><span>VIEW PROJECTS</span></a>
-                <a href="#contact" class="cta-btn"><span>GET IN TOUCH</span></a>
+                <a href="#projects" class="cta-btn primary">
+                    <span class="btn-text">VIEW PROJECTS</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="#contact" class="cta-btn secondary">
+                    <span class="btn-text">GET IN TOUCH</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <span>SCROLL DOWN</span>
+                <div class="scroll-line"></div>
             </div>
         </div>
     </section>
@@ -48,14 +96,44 @@
     <!-- About Section -->
     <section class="section about" id="about">
         <div class="container">
-            <h2>ABOUT ME</h2>
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">ABOUT ME</h2>
+            </div>
             <div class="about-content">
-                <div class="profile-pic">
-                    <img src="/portfolio/assets/me.png" alt="Juliana R. Mancera" class="profile-image">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="/portfolio/assets/me.png" alt="Juliana R. Mancera" class="profile-image">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="image-decoration"></div>
                 </div>
                 <div class="about-text">
-                    <h3>WHO AM I?</h3>
-                    <p>I'm a passionate developer with expertise in full-stack development, creating innovative solutions that blend creativity with functionality. With a strong foundation in multiple programming languages and frameworks, I bring ideas to life through clean code and intuitive design. My journey in tech is driven by curiosity and a commitment to continuous learning.</p>
+                    <h3 class="about-subtitle">4th Year Computer Science Student at New Era University</h3>
+                    <p class="about-description">
+                        I'm a passionate developer with strong skills in software development, business analysis, 
+                        and agile project management. My journey in tech is driven by curiosity and a commitment 
+                        to continuous learning.
+                    </p>
+                    <p class="about-description">
+                        With experience in developing scalable, user-friendly systems and leading teams toward 
+                        great outcomes, I bring ideas to life through clean code and intuitive design. I'm highly 
+                        adaptive, with excellent problem-solving skills and a proactive approach.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2026</div>
+                            <div class="stat-label">Expected Graduation</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Major Projects</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,44 +142,158 @@
     <!-- Skills Section -->
     <section class="section skills" id="skills">
         <div class="container">
-            <h2>SKILLS & EXPERTISE</h2>
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">SKILLS & EXPERTISE</h2>
+            </div>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">JavaScript</div>
-                    <div class="skill-item">TypeScript</div>
-                    <div class="skill-item">Java</div>
-                    <div class="skill-item">PHP</div>
-                    <div class="skill-item">HTML/CSS</div>
+                <div class="skill-card" data-category="programming">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 3L4 7L8 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 3L20 7L16 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 21L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">Programming Languages</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">TypeScript</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PHP</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Dart</span>
+                            <span class="skill-level"></span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Frameworks & Libraries</h3>
-                    <div class="skill-item">React.js</div>
-                    <div class="skill-item">Tailwiind</div>
-                    <div class="skill-item">Bootstrap</div>
-                    <div class="skill-item">Node.js</div>
-                    <div class="skill-item">Flutter</div>
-                    <div class="skill-item">Next.js</div>
-                    <div class="skill-item">Laravel</div>
+                <div class="skill-card" data-category="frameworks">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 9H15V15H9V9Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">Frameworks & Libraries</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">React.js</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">React Native</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Flutter</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Tailwind CSS</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Bootstrap</span>
+                            <span class="skill-level"></span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Backend & Database</h3>
-                    <div class="skill-item">Supabase</div>
-                    <div class="skill-item">Firebase</div>
-                    <div class="skill-item">PostgreSQL</div>
-                    <div class="skill-item">MongoDB</div>
+                <div class="skill-card" data-category="data">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 7L12 3L21 7M3 7V17M3 7L12 11M21 7V17M21 7L12 11M3 17L12 21M3 17L12 13M21 17L12 21M21 17L12 13M12 11V13M12 13V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">Data & Databases</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Supabase</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Firebase</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PostgreSQL</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">MongoDB</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Tableau</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Power BI</span>
+                            <span class="skill-level"></span>
+                        </div>
+                    </div>
                 </div>
 
-                 <div class="skill-card">
-                    <h3>Tools and IDEs</h3>
-                    <div class="skill-item">Visual Studio Code</div>
-                    <div class="skill-item">IntelliJ</div>
-                    <div class="skill-item">Jupyter Notebook</div>
-                    <div class="skill-item">CFigma</div>
-                    <div class="skill-item">Canva</div>
+                <div class="skill-card" data-category="tools">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">Tools & IDEs</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">VS Code</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">IntelliJ</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Figma</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GitHub</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Jira</span>
+                            <span class="skill-level"></span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">ClickUp</span>
+                            <span class="skill-level"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,138 +302,109 @@
     <!-- Projects Section -->
     <section class="section projects" id="projects">
         <div class="container">
-            <h2>FEATURED PROJECTS</h2>
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">FEATURED PROJECTS</h2>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-number">01</div>
                     <div class="project-image">
-                        💻
-                        <div class="project-overlay">
-                            <span class="view-project">View Details</span>
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>AAAAAAAAAAA</h3>
-                        <p>bbbbbbbbbbbbb</p>
-                        <div class="project-tags">
-                            <span class="tag">sss</span>
-                            <span class="tag">fffff</span>
-                            <span class="tag">Fdasda</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">🔗 Live Demo</a>
-                            <a href="#" class="project-link">💻 GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="project-card">
-                    <div class="project-image">
-                        📱
-                        <div class="project-overlay">
-                            <span class="view-project">View Details</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Mobile App Development</h3>
-                        <p>Cross-platform mobile application with smooth animations, offline capabilities, and cloud integration.</p>
-                        <div class="project-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag">Dart</span>
-                            <span class="tag">Supabase</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">🔗 Live Demo</a>
-                            <a href="#" class="project-link">💻 GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        🎨
-                        <div class="project-overlay">
-                            <span class="view-project">View Details</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Interactive Dashboard</h3>
-                        <p>Dynamic data visualization dashboard with real-time analytics and customizable widgets.</p>
+                        <h3 class="project-title">NEU OJT App</h3>
+                        <p class="project-role">Scrum Master</p>
+                        <p class="project-description">
+                            Led development team to build a platform enhancing On-the-Job Training for students. 
+                            Incorporated responsive layouts and collaboration tools using TypeScript and Vercel deployment.
+                        </p>
                         <div class="project-tags">
                             <span class="tag">TypeScript</span>
-                            <span class="tag">D3.js</span>
-                            <span class="tag">API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">🔗 Live Demo</a>
-                            <a href="#" class="project-link">💻 GitHub</a>
+                            <span class="tag">Vercel</span>
+                            <span class="tag">Collaboration Tools</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-number">02</div>
                     <div class="project-image">
-                        🛒
-                        <div class="project-overlay">
-                            <span class="view-project">View Details</span>
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>E-Commerce Platform</h3>
-                        <p>Full-featured e-commerce solution with payment integration, inventory management, and admin panel.</p>
+                        <h3 class="project-title">Thesisphere</h3>
+                        <p class="project-role">Scrum Master</p>
+                        <p class="project-description">
+                            Comprehensive, user-friendly web library for thesis management supporting research and 
+                            enhancing learning experience for students, faculty, and library staff.
+                        </p>
                         <div class="project-tags">
-                            <span class="tag">PHP</span>
-                            <span class="tag">Laravel</span>
-                            <span class="tag">MySQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">🔗 Live Demo</a>
-                            <a href="#" class="project-link">💻 GitHub</a>
+                            <span class="tag">Web Development</span>
+                            <span class="tag">Database Management</span>
+                            <span class="tag">Research Tools</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-number">03</div>
                     <div class="project-image">
-                        🤖
-                        <div class="project-overlay">
-                            <span class="view-project">View Details</span>
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 16V8C20.9996 7.64927 20.9071 7.30481 20.7315 7.00116C20.556 6.69751 20.3037 6.44536 20 6.27L13 2.27C12.696 2.09446 12.3511 2.00205 12 2.00205C11.6489 2.00205 11.304 2.09446 11 2.27L4 6.27C3.69626 6.44536 3.44398 6.69751 3.26846 7.00116C3.09294 7.30481 3.00036 7.64927 3 8V16C3.00036 16.3507 3.09294 16.6952 3.26846 16.9988C3.44398 17.3025 3.69626 17.5546 4 17.73L11 21.73C11.304 21.9055 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9055 13 21.73L20 17.73C20.3037 17.5546 20.556 17.3025 20.7315 16.9988C20.9071 16.6952 20.9996 16.3507 21 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>AI-Powered Tool</h3>
-                        <p>Intelligent application leveraging machine learning for automated data processing and predictions.</p>
+                        <h3 class="project-title">TheCICS</h3>
+                        <p class="project-role">Business Analyst</p>
+                        <p class="project-description">
+                            Centralized digital repository system for document management with thesis upload capabilities, 
+                            citation tracking, and categorization for NEU students and professors.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Document Management</span>
+                            <span class="tag">Digital Repository</span>
+                            <span class="tag">Citation Tracking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-number">04</div>
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18V5L21 12L9 19V18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Relapse Music Player</h3>
+                        <p class="project-role">Developer</p>
+                        <p class="project-description">
+                            Web-based music player with gesture-based control built using Flask (Python) and 
+                            OpenCV for innovative audio file playback from music directories.
+                        </p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
-                            <span class="tag">TensorFlow</span>
                             <span class="tag">Flask</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">🔗 Live Demo</a>
-                            <a href="#" class="project-link">💻 GitHub</a>
+                            <span class="tag">OpenCV</span>
+                            <span class="tag">Gesture Control</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        ⚡
-                        <div class="project-overlay">
-                            <span class="view-project">View Details</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Performance Optimizer</h3>
-                        <p>Tool for analyzing and optimizing web application performance with detailed metrics and insights.</p>
-                        <div class="project-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Webpack</span>
-                            <span class="tag">Node.js</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">🔗 Live Demo</a>
-                            <a href="#" class="project-link">💻 GitHub</a>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -250,66 +413,101 @@
     <!-- Achievements Section -->
     <section class="section achievements" id="achievements">
         <div class="container">
-            <h2>ACHIEVEMENTS & AWARDS</h2>
-            <div class="achievements-grid">
-                <!-- Achievement Card 1 -->
-                <div class="achievement-card">
-                    <div class="achievement-icon">🏆</div>
-                    <h3>wala pa</h3>
-                    <p class="achievement-date">2222</p>
-                    <p class="achievement-desc">matulog matulog matulog</p>
-                </div>
-                 <div class="achievement-card">
-                    <div class="achievement-icon">🏆</div>
-                    <h3>wala pa</h3>
-                    <p class="achievement-date">2222</p>
-                    <p class="achievement-desc">matulog matulog matulog</p>
-                </div>
-                 <div class="achievement-card">
-                    <div class="achievement-icon">🏆</div>
-                    <h3>wala pa</h3>
-                    <p class="achievement-date">2222</p>
-                    <p class="achievement-desc">matulog matulog matulog</p>
-                </div>
-                 <div class="achievement-card">
-                    <div class="achievement-icon">🏆</div>
-                    <h3>wala pa</h3>
-                    <p class="achievement-date">2222</p>
-                    <p class="achievement-desc">matulog matulog matulog</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">🏆</div>
-                    <h3>wala pa</h3>
-                    <p class="achievement-date">2222</p>
-                    <p class="achievement-desc">matulog matulog matulog</p>
-                </div>
-            
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">ACHIEVEMENTS & CERTIFICATIONS</h2>
             </div>
-        </div>
-    </section>
+            
+            <div class="achievements-category">
+                <h3 class="category-title">Professional Experience</h3>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-year">2025</div>
+                        <h4 class="achievement-title">Business Analyst Intern</h4>
+                        <p class="achievement-org">Simplevia Technologies Inc.</p>
+                        <p class="achievement-desc">
+                            Conducted comprehensive system analysis, created test scripts, and managed multiple 
+                            projects with tight deadlines.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Certifications Section -->
-    <section class="Certifications">
-        <div class="container">
-            <h2>CERTIFICATIONS</h2>
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="certification-icon">📜</div>
-                    <h3>Certification Title 1</h3>
-                    <p class="certification-issuer">Issued by XYZ</p>
-                    <p class="certification-date">Date: Jan 2023</p>
+            <div class="achievements-category">
+                <h3 class="category-title">Leadership Roles</h3>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-year">2024-2025</div>
+                        <h4 class="achievement-title">Documentation Committee Chairman</h4>
+                        <p class="achievement-org">ACSS - Association of Computer Science Students</p>
+                        <p class="achievement-desc">
+                            Led team in managing minutes, reports, and media submissions for organizational events.
+                        </p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-year">2025</div>
+                        <h4 class="achievement-title">4th Year Representative</h4>
+                        <p class="achievement-org">ACSS - Association of Computer Science Students</p>
+                        <p class="achievement-desc">
+                            Served as school announcer delivering daily updates to entire 4th Year BSCS batch.
+                        </p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-year">2023-2024</div>
+                        <h4 class="achievement-title">Documentation Vice Chairman</h4>
+                        <p class="achievement-org">ACSS - Association of Computer Science Students</p>
+                        <p class="achievement-desc">
+                            Maintained accurate records and supported committee execution.
+                        </p>
+                    </div>
                 </div>
-                <div class="certification-card">
-                    <div class="certification-icon">📜</div>
-                    <h3>Certification Title 2</h3>
-                    <p class="certification-issuer">Issued by ABC</p>
-                    <p class="certification-date">Date: Mar 2023</p>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-icon">📜</div>
-                    <h3>Certification Title 3</h3>
-                    <p class="certification-issuer">Issued by DEF</p>
-                    <p class="certification-date">Date: Jun 2023</p>
+            </div>
+
+            <div class="achievements-category">
+                <h3 class="category-title">Certifications</h3>
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Data Analytics Essentials - Cisco Networking Academy</span>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Deep Learning with TensorFlow – Cognitive Class</span>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Data Visualization with Python – Cognitive Class</span>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Data Analysis with Python - Cognitive Class</span>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Python 101 for Data Science - Cognitive Class</span>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">JavaScript Algorithms and Data Structures – freeCodeCamp</span>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Responsive Web Design – freeCodeCamp</span>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Agile Scrum Master - Simplilearn</span>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Oracle Cloud Infrastructure 2023 AI Certified Foundations Associate</span>
+                    </div>
+                    <div class="certification-item">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Oracle Cloud Data Management 2023 Certified Foundations Associate</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -318,50 +516,127 @@
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
-            <h2>GET IN TOUCH</h2>
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">GET IN TOUCH</h2>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's Create Something Amazing</h3>
-                    <div class="contact-item">
-                        <i>📧</i>
-                        <span>juliana.mancera@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i>📱</i>
-                        <span>+63 90XXXXXXXX</span>
-                    </div>
-                    <div class="contact-item">
-                        <i>🌍</i>
-                        <span>Caloocan City, Metro Manila, PH</span>
-                    </div>
-                    <div class="contact-item">
-                        <i>💼</i>
-                        <span>linkedin.com/in/juliana-mancera</span>
-                    </div>
-                    <div class="contact-item">
-                        <i>🔗</i>
-                        <span>github.com/juliana-mancera</span>
+                    <h3 class="contact-subtitle">Let's Create Something Amazing</h3>
+                    <p class="contact-description">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <a href="mailto:real.julianamancera@gmail.com" class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value">real.julianamancera@gmail.com</div>
+                            </div>
+                        </a>
+
+                        <a href="tel:+639614488545" class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 16.92V19.92C22 20.4696 21.5523 20.9167 21.0033 20.9201C18.0956 20.9566 15.2473 20.0892 12.82 18.42C10.5812 16.8954 8.7297 14.8359 7.43999 12.42C5.77002 10.0139 4.90279 7.18995 4.93999 4.30001C4.94326 3.75113 5.38995 3.30444 5.93999 3.30444H8.93999C9.48941 3.30444 9.93999 3.75502 9.93999 4.30444C9.93999 5.25351 10.0828 6.19596 10.36 7.10444C10.4848 7.51888 10.3471 7.96719 10.02 8.24444L8.83999 9.30444C10.1024 11.6407 12.0429 13.5812 14.38 14.8444L15.44 13.6644C15.7173 13.3373 16.1656 13.1996 16.58 13.3244C17.4885 13.6016 18.4309 13.7444 19.38 13.7444C19.9294 13.7444 20.38 14.195 20.38 14.7444V17.7444C20.38 18.0291 20.2669 18.3022 20.0668 18.5023C19.8668 18.7023 19.5937 18.8154 19.309 18.8154L22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Phone</div>
+                                <div class="contact-value">+63 961 448 8545</div>
+                            </div>
+                        </a>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Location</div>
+                                <div class="contact-value">Caloocan City, Metro Manila, PH</div>
+                            </div>
+                        </div>
+
+                        <a href="https://linkedin.com/in/juliana-mancera" target="_blank" class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">LinkedIn</div>
+                                <div class="contact-value">linkedin.com/in/juliana-mancera</div>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/juliana-mancera" target="_blank" class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 19C4 20.5 4 16.5 2 16M16 22V18.13C16.0375 17.6532 15.9731 17.1738 15.811 16.7238C15.6489 16.2738 15.3929 15.8634 15.06 15.52C18.2 15.17 21.5 13.98 21.5 8.52C21.4997 7.12383 20.9627 5.7812 20 4.77C20.4559 3.54851 20.4236 2.19835 19.91 1C19.91 1 18.73 0.650001 16 2.48C13.708 1.85882 11.292 1.85882 9 2.48C6.27 0.650001 5.09 1 5.09 1C4.57638 2.19835 4.54414 3.54851 5 4.77C4.03013 5.7887 3.49252 7.14346 3.5 8.55C3.5 13.97 6.8 15.16 9.94 15.55C9.611 15.89 9.35726 16.2954 9.19531 16.7399C9.03335 17.1844 8.96681 17.6581 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">GitHub</div>
+                                <div class="contact-value">github.com/juliana-mancera</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject" required>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
                     </div>
                     <div class="form-group">
-                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </form>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">JULIANA MANCERA</div>
+                    <p class="footer-tagline">Building the future, one line of code at a time.</p>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-copyright">© 2025 Juliana R. Mancera. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
