@@ -1,4 +1,4 @@
-// ===== PARTICLE BACKGROUND =====
+// PARTICLE BACKGROUND 
 const bgAnimation = document.getElementById('bgAnimation');
 // Reduced from 80 to 30 particles for better performance
 for (let i = 0; i < 30; i++) {
@@ -11,41 +11,22 @@ for (let i = 0; i < 30; i++) {
     bgAnimation.appendChild(particle);
 }
 
-// ===== CUSTOM CURSOR =====
+//  CUSTOM CURSOR 
 const cursor = document.getElementById('cursor');
 const hoverElements = document.querySelectorAll('a, button, input, textarea, .project-card, .skill-card, .achievement-card');
 
-let mouseX = 0;
-let mouseY = 0;
-let cursorX = 0;
-let cursorY = 0;
-
+// Direct cursor positioning for accuracy
 document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
 });
-
-function animateCursor() {
-    const diffX = mouseX - cursorX;
-    const diffY = mouseY - cursorY;
-    
-    cursorX += diffX * 0.1;
-    cursorY += diffY * 0.1;
-    
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
-    
-    requestAnimationFrame(animateCursor);
-}
-
-animateCursor();
 
 hoverElements.forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
 });
 
-// ===== LOADING SCREEN =====
+//  LOADING SCREEN 
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.getElementById('loadingScreen').classList.add('hidden');
@@ -53,7 +34,7 @@ window.addEventListener('load', () => {
     }, 2500);
 });
 
-// ===== SMOOTH SCROLL =====
+//  SMOOTH SCROLL 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -70,7 +51,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== NAVIGATION ACTIVE STATE =====
+// NAVIGATION ACTIVE STATE 
 const sections = document.querySelectorAll('.section');
 const navItems = document.querySelectorAll('.nav-item');
 const mainNav = document.getElementById('mainNav');
@@ -102,7 +83,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ===== CONTACT FORM =====
+// CONTACT FORM 
 document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -126,7 +107,7 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     }, 1500);
 });
 
-// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+// INTERSECTION OBSERVER FOR ANIMATIONS
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -147,7 +128,7 @@ document.querySelectorAll('.skill-card, .project-card, .achievement-card, .certi
     observer.observe(el);
 });
 
-// ===== PARALLAX EFFECT =====
+// PARALLAX EFFECT 
 let ticking = false;
 
 window.addEventListener('scroll', () => {
@@ -178,13 +159,13 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ===== SKILL CARD REVEAL ANIMATION =====
+// SKILL CARD REVEAL ANIMATION 
 const skillCards = document.querySelectorAll('.skill-card');
 skillCards.forEach((card, index) => {
     card.style.setProperty('--index', index);
 });
 
-// ===== PROJECT CARD TILT EFFECT =====
+// PROJECT CARD TILT EFFECT 
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -206,7 +187,7 @@ projectCards.forEach(card => {
     });
 });
 
-// ===== TYPING EFFECT FOR HERO =====
+// TYPING EFFECT FOR HERO 
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     const originalText = text;
@@ -223,15 +204,15 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// ===== SCROLL TO TOP ON PAGE LOAD =====
+// SCROLL TO TOP ON PAGE LOAD 
 window.addEventListener('beforeunload', () => {
     window.scrollTo(0, 0);
 });
 
-// ===== PREVENT SCROLL DURING LOADING =====
+// PREVENT SCROLL DURING LOADING
 document.body.style.overflow = 'hidden';
 
-// ===== GLITCH EFFECT ON HOVER =====
+//  GLITCH EFFECT ON HOVER 
 const glitchElements = document.querySelectorAll('.glitch');
 glitchElements.forEach(element => {
     element.addEventListener('mouseenter', () => {
@@ -243,7 +224,7 @@ glitchElements.forEach(element => {
     });
 });
 
-// ===== DEBOUNCE FUNCTION =====
+// DEBOUNCE FUNCTION
 function debounce(func, wait = 10) {
     let timeout;
     return function executedFunction(...args) {
@@ -256,28 +237,28 @@ function debounce(func, wait = 10) {
     };
 }
 
-// ===== PERFORMANCE OPTIMIZATION =====
+// PERFORMANCE OPTIMIZATION
 const debouncedScroll = debounce(() => {
     // Additional scroll logic here if needed
 }, 10);
 
 window.addEventListener('scroll', debouncedScroll);
 
-// ===== FADE IN ON LOAD =====
+// FADE IN ON LOAD 
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.body.style.opacity = '1';
     }, 100);
 });
 
-// ===== DYNAMIC YEAR FOR FOOTER =====
+// DYNAMIC YEAR FOR FOOTER
 const currentYear = new Date().getFullYear();
 const footerCopyright = document.querySelector('.footer-copyright');
 if (footerCopyright) {
     footerCopyright.textContent = `© ${currentYear} Juliana R. Mancera. All rights reserved.`;
 }
 
-// ===== SKILL LEVEL ANIMATION =====
+// SKILL LEVEL ANIMATION
 const skillLevels = document.querySelectorAll('.skill-level');
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -291,7 +272,7 @@ skillLevels.forEach(level => {
     skillObserver.observe(level);
 });
 
-// ===== FORM VALIDATION =====
+//FORM VALIDATION
 const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
 formInputs.forEach(input => {
     input.addEventListener('blur', () => {
@@ -307,7 +288,7 @@ formInputs.forEach(input => {
     });
 });
 
-// ===== ACHIEVEMENT CARD COUNTER =====
+// ACHIEVEMENT CARD COUNTER
 const statNumbers = document.querySelectorAll('.stat-number');
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -343,7 +324,7 @@ statNumbers.forEach(stat => {
     statsObserver.observe(stat);
 });
 
-// ===== MOBILE MENU TOGGLE (If needed in future) =====
+// MOBILE MENU TOGGLE (If needed in future) 
 // Uncomment and customize if you want to add a mobile hamburger menu
 /*
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -357,11 +338,11 @@ if (mobileMenuBtn) {
 }
 */
 
-// ===== CONSOLE MESSAGE =====
+// CONSOLE MESSAGE
 console.log('%c🚀 Portfolio by Juliana R. Mancera', 'font-size: 20px; font-weight: bold; color: #00F5FF;');
 console.log('%cBuilding the future, one line of code at a time.', 'font-size: 14px; color: #8B8B8B;');
 
-// ===== EASTER EGG: Konami Code =====
+// EASTER EGG: Konami Code
 let konamiCode = [];
 const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
