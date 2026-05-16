@@ -83,28 +83,43 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// CONTACT FORM 
-document.getElementById('contactForm').addEventListener('submit', (e) => {
+// CONTACT FORM
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const form = e.target;
     const submitBtn = form.querySelector('.submit-btn');
-    const originalText = submitBtn.innerHTML;
-    
-    // Show loading state
+    const originalHTML = submitBtn.innerHTML;
+
     submitBtn.innerHTML = '<span>SENDING...</span>';
     submitBtn.disabled = true;
-    
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        submitBtn.innerHTML = '<span>MESSAGE SENT! ✓</span>';
-        
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            submitBtn.innerHTML = '<span>MESSAGE SENT! ✓</span>';
             form.reset();
-        }, 2000);
-    }, 1500);
+            setTimeout(() => {
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.disabled = false;
+            }, 3000);
+        } else {
+            throw new Error('Server error');
+        }
+    } catch {
+        submitBtn.innerHTML = '<span>FAILED. TRY AGAIN.</span>';
+        submitBtn.style.background = 'linear-gradient(135deg, #c1436d, #8338ec)';
+        setTimeout(() => {
+            submitBtn.innerHTML = originalHTML;
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+        }, 3000);
+    }
 });
 
 // INTERSECTION OBSERVER FOR ANIMATIONS
