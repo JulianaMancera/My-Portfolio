@@ -83,28 +83,43 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// CONTACT FORM 
-document.getElementById('contactForm').addEventListener('submit', (e) => {
+// CONTACT FORM
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const form = e.target;
     const submitBtn = form.querySelector('.submit-btn');
-    const originalText = submitBtn.innerHTML;
-    
-    // Show loading state
+    const originalHTML = submitBtn.innerHTML;
+
     submitBtn.innerHTML = '<span>SENDING...</span>';
     submitBtn.disabled = true;
-    
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        submitBtn.innerHTML = '<span>MESSAGE SENT! ✓</span>';
-        
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            submitBtn.innerHTML = '<span>MESSAGE SENT! ✓</span>';
             form.reset();
-        }, 2000);
-    }, 1500);
+            setTimeout(() => {
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.disabled = false;
+            }, 3000);
+        } else {
+            throw new Error('Server error');
+        }
+    } catch {
+        submitBtn.innerHTML = '<span>FAILED. TRY AGAIN.</span>';
+        submitBtn.style.background = 'linear-gradient(135deg, #c1436d, #8338ec)';
+        setTimeout(() => {
+            submitBtn.innerHTML = originalHTML;
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+        }, 3000);
+    }
 });
 
 // INTERSECTION OBSERVER FOR ANIMATIONS
@@ -187,24 +202,7 @@ projectCards.forEach(card => {
     });
 });
 
-// TYPING EFFECT FOR HERO 
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    const originalText = text;
-    element.textContent = '';
-    
-    function type() {
-        if (i < originalText.length) {
-            element.textContent += originalText.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// SCROLL TO TOP ON PAGE LOAD 
+// SCROLL TO TOP ON PAGE LOAD
 window.addEventListener('beforeunload', () => {
     window.scrollTo(0, 0);
 });
@@ -324,19 +322,23 @@ statNumbers.forEach(stat => {
     statsObserver.observe(stat);
 });
 
-// MOBILE MENU TOGGLE (If needed in future) 
-// Uncomment and customize if you want to add a mobile hamburger menu
-/*
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navLinks = document.querySelector('.nav-links');
+// MOBILE MENU TOGGLE
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navLinks = document.getElementById('navLinks');
 
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
+hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : 'auto';
+});
+
+navLinks.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('open');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = 'auto';
     });
-}
-*/
+});
 
 // CONSOLE MESSAGE
 console.log('%c🚀 Portfolio by Juliana R. Mancera', 'font-size: 20px; font-weight: bold; color: #00F5FF;');
