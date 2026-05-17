@@ -204,12 +204,12 @@ body {
 }
 
 @keyframes glitch-anim {
-    0% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
-    20% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
-    40% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
-    60% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
-    80% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
-    100% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    0%   { clip: rect(12px,  9999px, 48px,  0); }
+    20%  { clip: rect(67px,  9999px, 82px,  0); }
+    40%  { clip: rect(33px,  9999px, 9px,   0); }
+    60%  { clip: rect(91px,  9999px, 55px,  0); }
+    80%  { clip: rect(22px,  9999px, 74px,  0); }
+    100% { clip: rect(58px,  9999px, 30px,  0); }
 }
 
 @keyframes glitch-skew {
@@ -223,7 +223,7 @@ body {
 .loading-bar {
     width: 300px;
     height: 4px;
-    background: rgba(0, 245, 255, 0.1);
+    background: rgba(163, 80, 163, 0.1);
     border-radius: 2px;
     overflow: hidden;
     margin: 0 auto 20px;
@@ -413,7 +413,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: radial-gradient(circle at center, rgba(0, 245, 255, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(163, 80, 163, 0.05) 0%, transparent 70%);
 }
 
 .hero-content {
@@ -740,7 +740,7 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(0, 245, 255, 0.05), transparent);
+    background: linear-gradient(45deg, transparent, rgba(163, 80, 163, 0.05), transparent);
     transform: rotate(45deg);
     transition: all 0.5s ease;
 }
@@ -752,7 +752,7 @@ body {
 .skill-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary);
-    box-shadow: 0 20px 50px rgba(0, 245, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(163, 80, 163, 0.1);
 }
 
 .skill-icon {
@@ -793,7 +793,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 12px 20px;
-    background: rgba(0, 245, 255, 0.05);
+    background: rgba(163, 80, 163, 0.05);
     border-left: 2px solid var(--primary);
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -820,7 +820,7 @@ body {
 .skill-item:hover {
     transform: translateX(10px);
     border-left-color: var(--secondary);
-    background: rgba(0, 245, 255, 0.1);
+    background: rgba(163, 80, 163, 0.1);
 }
 
 .skill-name {
@@ -832,13 +832,12 @@ body {
 }
 
 .skill-level {
-    width: 8px;
-    height: 8px;
-    background: var(--primary);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--primary);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--primary);
     position: relative;
     z-index: 1;
+    text-shadow: 0 0 6px var(--primary);
 }
 
 /* ===== PROJECTS SECTION ===== */
@@ -871,7 +870,7 @@ body {
 .project-card:hover {
     transform: translateY(-15px);
     border-color: var(--primary);
-    box-shadow: 0 25px 60px rgba(0, 245, 255, 0.15);
+    box-shadow: 0 25px 60px rgba(163, 80, 163, 0.15);
 }
 
 .project-number {
@@ -894,7 +893,7 @@ body {
 
 .project-image {
     height: 250px;
-    background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 110, 0.1));
+    background: linear-gradient(135deg, rgba(163, 80, 163, 0.1), rgba(255, 0, 110, 0.1));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -906,7 +905,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, transparent, rgba(0, 245, 255, 0.05), transparent);
+    background: linear-gradient(135deg, transparent, rgba(163, 80, 163, 0.05), transparent);
     transform: translateX(-100%);
     transition: transform 0.5s ease;
 }
@@ -978,7 +977,7 @@ body {
 
 .tag {
     padding: 6px 15px;
-    background: rgba(0, 245, 255, 0.1);
+    background: rgba(163, 80, 163, 0.1);
     border: 1px solid var(--border);
     border-radius: 20px;
     font-size: 0.75rem;
@@ -1059,7 +1058,7 @@ body {
 .achievement-card:hover {
     transform: translateX(10px);
     border-color: var(--primary);
-    box-shadow: 0 15px 40px rgba(0, 245, 255, 0.1);
+    box-shadow: 0 15px 40px rgba(163, 80, 163, 0.1);
 }
 
 .achievement-year {
@@ -1129,7 +1128,7 @@ body {
 .certification-item:hover {
     transform: translateX(10px);
     border-color: var(--primary);
-    background: rgba(0, 245, 255, 0.05);
+    background: rgba(163, 80, 163, 0.05);
 }
 
 .cert-icon {
@@ -1206,7 +1205,7 @@ body {
 .contact-item:hover {
     transform: translateX(10px);
     border-color: var(--primary);
-    background: rgba(0, 245, 255, 0.05);
+    background: rgba(163, 80, 163, 0.05);
 }
 
 .contact-icon {
@@ -1275,7 +1274,7 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 15px 20px;
-    background: rgba(0, 245, 255, 0.05);
+    background: rgba(163, 80, 163, 0.05);
     border: 1px solid var(--border);
     border-radius: 10px;
     color: var(--light);
@@ -1288,8 +1287,8 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary);
-    background: rgba(0, 245, 255, 0.1);
-    box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+    background: rgba(163, 80, 163, 0.1);
+    box-shadow: 0 0 20px rgba(163, 80, 163, 0.1);
 }
 
 .form-group textarea {
@@ -1334,7 +1333,7 @@ body {
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 245, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(163, 80, 163, 0.3);
 }
 
 .submit-btn span,
@@ -1390,6 +1389,42 @@ body {
     letter-spacing: 1px;
 }
 
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
     .section {
@@ -1440,18 +1475,38 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links {
-        flex-wrap: wrap;
-        gap: 2px;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(6, 1, 13, 0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        z-index: 1000;
+    }
+
+    .nav-links.open {
+        display: flex;
     }
 
     .nav-item {
-        padding: 8px 12px;
-        font-size: 0.65rem;
+        font-size: 1rem;
+        padding: 15px 30px;
+        letter-spacing: 3px;
     }
 
     .nav-number {
-        font-size: 0.6rem;
+        font-size: 0.75rem;
     }
 }
 
