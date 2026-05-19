@@ -34,19 +34,15 @@ window.addEventListener('load', () => {
     }, 2500);
 });
 
-//  SMOOTH SCROLL 
+//  SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
         if (target) {
-            const offset = 80;
-            const targetPosition = target.offsetTop - offset;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
         }
     });
 });
@@ -131,6 +127,10 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            const siblings = [...entry.target.parentElement.children];
+            const idx = siblings.indexOf(entry.target);
+            const delay = idx * 0.08;
+            entry.target.style.transition = `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s`;
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
         }
@@ -371,3 +371,139 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ===== INTERACTIVE EFFECTS =====
+
+// TEXT SCRAMBLE
+const SCRAMBLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&';
+
+function scrambleText(el, finalText, duration = 900) {
+    const steps = 28;
+    const stepTime = duration / steps;
+    let step = 0;
+    const timer = setInterval(() => {
+        const progress = step / steps;
+        el.textContent = finalText
+            .split('')
+            .map((char, i) => {
+                if (char === ' ') return ' ';
+                if (i / finalText.length < progress) return char;
+                return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+            })
+            .join('');
+        if (++step > steps) {
+            el.textContent = finalText;
+            clearInterval(timer);
+        }
+    }, stepTime);
+}
+
+const scrambleObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            const text = el.dataset.originalText || el.textContent.trim();
+            el.dataset.originalText = text;
+            scrambleText(el, text);
+            scrambleObserver.unobserve(el);
+        }
+    });
+}, { threshold: 0.8 });
+
+document.querySelectorAll('.section-title').forEach(el => scrambleObserver.observe(el));
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const heroTitle = document.querySelector('.title-line');
+        if (heroTitle) scrambleText(heroTitle, heroTitle.textContent.trim(), 1400);
+    }, 2700);
+});
+
+// SIDE PROGRESS DOTS
+const progressDots = document.querySelectorAll('.progress-dot');
+
+const sectionProgressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            progressDots.forEach(dot => {
+                dot.classList.toggle('active', dot.dataset.target === entry.target.id);
+            });
+        }
+    });
+}, { threshold: 0.4 });
+
+document.querySelectorAll('.section').forEach(s => sectionProgressObserver.observe(s));
+
+progressDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        const target = document.getElementById(dot.dataset.target);
+        if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+    });
+});
+
+// CURSOR TRAIL
+let lastTrailTime = 0;
+document.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    if (now - lastTrailTime < 40) return;
+    lastTrailTime = now;
+    const trail = document.createElement('div');
+    trail.className = 'cursor-trail';
+    trail.style.left = e.clientX + 'px';
+    trail.style.top = e.clientY + 'px';
+    document.body.appendChild(trail);
+    setTimeout(() => trail.remove(), 600);
+});
+
+// MAGNETIC BUTTONS
+document.querySelectorAll('.cta-btn').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+        btn.style.transition = 'transform 0.1s ease';
+    });
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.25;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.25;
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        btn.style.transform = '';
+    });
+});
+
+// MOUSE-REACTIVE BACKGROUND
+const bgEl = document.querySelector('.bg-animation');
+let bgTick = false;
+document.addEventListener('mousemove', (e) => {
+    if (!bgTick) {
+        requestAnimationFrame(() => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            bgEl.style.background = `radial-gradient(ellipse at ${x}% ${y}%, rgba(131, 56, 236, 0.13) 0%, transparent 60%)`;
+            bgTick = false;
+        });
+        bgTick = true;
+    }
+});
+
+// PROFILE IMAGE 3D PARALLAX
+const profileWrapper = document.querySelector('.image-wrapper');
+if (profileWrapper) {
+    const aboutSection = document.getElementById('about');
+    document.addEventListener('mousemove', (e) => {
+        const rect = aboutSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const x = (e.clientX / window.innerWidth - 0.5) * 18;
+            const y = (e.clientY / window.innerHeight - 0.5) * 18;
+            profileWrapper.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
+        }
+    });
+    profileWrapper.addEventListener('mouseleave', () => {
+        profileWrapper.style.transition = 'transform 0.6s ease';
+        profileWrapper.style.transform = '';
+    });
+    profileWrapper.addEventListener('mouseenter', () => {
+        profileWrapper.style.transition = 'transform 0.1s ease';
+    });
+}
