@@ -140,6 +140,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.skill-card, .project-card, .achievement-card, .certification-item, .contact-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
 
@@ -222,25 +223,6 @@ glitchElements.forEach(element => {
     });
 });
 
-// DEBOUNCE FUNCTION
-function debounce(func, wait = 10) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// PERFORMANCE OPTIMIZATION
-const debouncedScroll = debounce(() => {
-    // Additional scroll logic here if needed
-}, 10);
-
-window.addEventListener('scroll', debouncedScroll);
 
 // FADE IN ON LOAD 
 window.addEventListener('load', () => {
