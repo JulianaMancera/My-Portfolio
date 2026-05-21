@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A350A3"/>
+      <stop offset="100%" stop-color="#8338EC"/>
+    </linearGradient>
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C1436D"/>
+      <stop offset="50%" stop-color="#A350A3"/>
+      <stop offset="100%" stop-color="#8338EC"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Octagon background -->
+  <polygon points="20,2 80,2 98,20 98,80 80,98 20,98 2,80 2,20" fill="#06010D"/>
+
+  <!-- Outer gradient border -->
+  <polygon points="20,2 80,2 98,20 98,80 80,98 20,98 2,80 2,20"
+           fill="none" stroke="url(#border-grad)" stroke-width="3"/>
+
+  <!-- Corner accent marks -->
+  <line x1="2" y1="28" x2="2" y2="20" stroke="#A350A3" stroke-width="2" opacity="0.6"/>
+  <line x1="2" y1="20" x2="10" y2="20" stroke="#A350A3" stroke-width="2" opacity="0.6"/>
+  <line x1="98" y1="72" x2="98" y2="80" stroke="#8338EC" stroke-width="2" opacity="0.6"/>
+  <line x1="98" y1="80" x2="90" y2="80" stroke="#8338EC" stroke-width="2" opacity="0.6"/>
+
+  <!-- JM monogram -->
+  <text x="50" y="64"
+        font-family="Arial Black, Impact, sans-serif"
+        font-size="40"
+        font-weight="900"
+        text-anchor="middle"
+        fill="url(#text-grad)"
+        filter="url(#glow)">JM</text>
+</svg>
