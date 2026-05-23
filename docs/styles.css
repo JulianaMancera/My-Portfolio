@@ -192,14 +192,12 @@ body {
 .glitch::before {
     left: 2px;
     text-shadow: -2px 0 var(--secondary);
-    clip: rect(24px, 550px, 90px, 0);
     animation: glitch-anim 3s infinite linear alternate-reverse;
 }
 
 .glitch::after {
     left: -2px;
     text-shadow: -2px 0 var(--accent);
-    clip: rect(85px, 550px, 140px, 0);
     animation: glitch-anim 2s infinite linear alternate-reverse;
 }
 
@@ -1029,7 +1027,7 @@ body {
     border: 1px solid var(--primary);
     border-radius: 4px;
     color: var(--primary);
-    font-family: var(--font-mono);
+    font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     letter-spacing: 1px;
     text-decoration: none;
