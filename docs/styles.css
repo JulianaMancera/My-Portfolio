@@ -75,6 +75,10 @@ body {
 }
 
 /* ===== CUSTOM CURSOR ===== */
+@media (pointer: coarse) {
+    .cursor { display: none; }
+}
+
 .cursor {
     position: fixed;
     width: 40px;

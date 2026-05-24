@@ -11,20 +11,21 @@ for (let i = 0; i < 30; i++) {
     bgAnimation.appendChild(particle);
 }
 
-//  CUSTOM CURSOR 
-const cursor = document.getElementById('cursor');
-const hoverElements = document.querySelectorAll('a, button, input, textarea, .project-card, .skill-card, .achievement-card');
+//  CUSTOM CURSOR (mouse/trackpad only — hidden on touch devices via CSS)
+if (window.matchMedia('(pointer: fine)').matches) {
+    const cursor = document.getElementById('cursor');
+    const hoverElements = document.querySelectorAll('a, button, input, textarea, .project-card, .skill-card, .achievement-card');
 
-// Direct cursor positioning for accuracy
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
 
-hoverElements.forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-});
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+}
 
 //  LOADING SCREEN 
 window.addEventListener('load', () => {
