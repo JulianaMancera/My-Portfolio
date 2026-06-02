@@ -78,10 +78,13 @@
             <h1 class="hero-title">
                 <span class="title-line">JULIANA MANCERA</span>
             </h1>
-            <p class="hero-subtitle">Data Analyst • Software Developer </p>
-            <div class="hero-description">
-                Building scalable, user-friendly systems with expertise in full-stack development, 
-                business analysis, and agile project management.
+            <p class="hero-subtitle">Data Analyst • Software Developer</p>
+            <div class="version-switcher">
+                <button type="button" class="version-btn active" data-version="data">Data Analyst Version</button>
+                <button type="button" class="version-btn" data-version="dev">Software Developer Version</button>
+            </div>
+            <div id="heroDescription" class="hero-description">
+                Turning raw data into actionable insights through analytics, visualization, and business-driven problem solving.
             </div>
             <div class="hero-cta">
                 <a href="#projects" class="cta-btn primary">
@@ -136,6 +139,41 @@
                 <h2 class="section-title">SKILLS & EXPERTISE</h2>
             </div>
             <div class="skills-grid">
+                <div class="skill-card" data-category="data">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 7L12 3L21 7M3 7V17M3 7L12 11M21 7V17M21 7L12 11M3 17L12 21M3 17L12 13M21 17L12 21M21 17L12 13M12 11V13M12 13V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title">Data & Databases</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Tableau</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Power BI</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Firebase</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Supabase</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="skill-card" data-category="programming">
                     <div class="skill-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,9 +198,6 @@
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">PHP</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">SQL</span>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Dart</span>
@@ -196,35 +231,6 @@
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Bootstrap</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-category="data">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 7L12 3L21 7M3 7V17M3 7L12 11M21 7V17M21 7L12 11M3 17L12 21M3 17L12 13M21 17L12 21M21 17L12 13M12 11V13M12 13V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="skill-title">Data & Databases</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span class="skill-name">Supabase</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Firebase</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">PostgreSQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">MongoDB</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Tableau</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Power BI</span>
                         </div>
                     </div>
                 </div>
@@ -284,9 +290,9 @@
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Bantay Drive</h3>
-                        <p class="project-role">Mobile App Developer</p>
-                        <p class="project-description">
-                            Real-time on-device driver monitoring app built with Flutter and Dart, integrating a custom TFLite deep learning model (DMS-HybridNet) that classifies driver behavior into 13 sub-classes across Natural, Distracted, and Drowsy states — entirely offline. Features 3-level audio alerts, Picture-in-Picture monitoring, automatic video clip capture, and local SQLite database with Riverpod state management.
+                        <p id="bantayRole" class="project-role">Data Analyst / ML Engineer</p>
+                        <p id="bantayDesc" class="project-description">
+                            Real-time on-device driver monitoring app built around a custom 13-class TFLite model that turns raw driver behavior data into actionable alerts. Focused on offline data processing, behavior classification, and a local analytics pipeline for distraction, drowsiness, and safety insights.
                         </p>
                         <div class="project-tags">
                             <span class="tag">Flutter</span>
@@ -343,9 +349,9 @@
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">TheCICS</h3>
-                        <p class="project-role">Business Analyst</p>
-                        <p class="project-description">
-                            Centralized digital document management system for NEU's College of Information and Computing Sciences — enabling thesis uploads, citation tracking, and category-based reference browsing. Designed the database schema and system architecture to support multi-role access for students, faculty, and administrators.
+                        <p id="theCICSRole" class="project-role">Business Analyst / Data Architect</p>
+                        <p id="theCICSDesc" class="project-description">
+                            Centralized document management system for NEU CICS, designed with multi-role access, normalized database schema, and citation tracking workflows. Led requirements, schema design, and data architecture to support students, faculty, and administrator use cases.
                         </p>
                         <div class="project-tags">
                             <span class="tag">TypeScript</span>

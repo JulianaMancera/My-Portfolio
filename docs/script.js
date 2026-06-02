@@ -182,6 +182,54 @@ skillCards.forEach((card, index) => {
     card.style.setProperty('--index', index);
 });
 
+// VERSION TOGGLE
+const versionButtons = document.querySelectorAll('.version-btn');
+const heroDescriptionEl = document.getElementById('heroDescription');
+const bantayRoleEl = document.getElementById('bantayRole');
+const bantayDescEl = document.getElementById('bantayDesc');
+const theCICSRoleEl = document.getElementById('theCICSRole');
+const theCICSDescEl = document.getElementById('theCICSDesc');
+
+const portfolioVersions = {
+    data: {
+        hero: 'Turning raw data into actionable insights through analytics, visualization, and business-driven problem solving.',
+        bantayRole: 'Data Analyst / ML Engineer',
+        bantayDesc: 'Real-time on-device driver monitoring app built around a custom 13-class TFLite model that turns raw driver behavior data into actionable alerts. Focused on offline data processing, behavior classification, and a local analytics pipeline for distraction, drowsiness, and safety insights.',
+        theCICSRole: 'Business Analyst / Data Architect',
+        theCICSDesc: 'Centralized document management system for NEU CICS, designed with multi-role access, normalized database schema, and citation tracking workflows. Led requirements, schema design, and data architecture to support students, faculty, and administrator use cases.'
+    },
+    dev: {
+        hero: 'Building scalable, user-friendly systems across web and mobile — from architecture to intuitive interfaces.',
+        bantayRole: 'Mobile App Developer',
+        bantayDesc: 'Real-time on-device driver monitoring app built with Flutter and Dart, integrating a custom TFLite deep learning model (DMS-HybridNet) that classifies driver behavior into 13 sub-classes across Natural, Distracted, and Drowsy states — entirely offline. Features 3-level audio alerts, Picture-in-Picture monitoring, automatic video clip capture, and local SQLite database with Riverpod state management.',
+        theCICSRole: 'Business Analyst',
+        theCICSDesc: 'Centralized digital document management system for NEU\'s College of Information and Computing Sciences — enabling thesis uploads, citation tracking, and category-based reference browsing. Designed the database schema and system architecture to support multi-role access for students, faculty, and administrators.'
+    }
+};
+
+function setPortfolioVersion(version) {
+    const versionData = portfolioVersions[version];
+    if (!versionData) return;
+
+    heroDescriptionEl.textContent = versionData.hero;
+    bantayRoleEl.textContent = versionData.bantayRole;
+    bantayDescEl.textContent = versionData.bantayDesc;
+    theCICSRoleEl.textContent = versionData.theCICSRole;
+    theCICSDescEl.textContent = versionData.theCICSDesc;
+
+    versionButtons.forEach(button => {
+        button.classList.toggle('active', button.dataset.version === version);
+    });
+}
+
+versionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        setPortfolioVersion(button.dataset.version);
+    });
+});
+
+setPortfolioVersion('data');
+
 // PROJECT CARD TILT EFFECT 
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach(card => {
