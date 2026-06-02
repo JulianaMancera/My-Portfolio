@@ -563,35 +563,6 @@ body {
   font-weight: 300;
 }
 
-.version-switcher {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.version-btn {
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--light);
-  padding: 11px 22px;
-  border-radius: 999px;
-  font-size: 0.88rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.version-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.version-btn.active {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: var(--dark);
-}
-
 .hero-description {
   font-size: 1.1rem;
   color: var(--gray);
