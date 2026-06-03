@@ -406,7 +406,7 @@ body {
 .nav-number {
   font-size: 0.65rem;
   color: var(--primary);
-  opacity: 0.5;
+  opacity: 0.85;
   transition: all 0.3s ease;
 }
 
@@ -470,8 +470,9 @@ body {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  opacity: 0.2;
+  opacity: 0.45;
   line-height: 1;
+  text-shadow: 0 0 18px rgba(163, 80, 163, 0.25);
 }
 
 .section-title {
