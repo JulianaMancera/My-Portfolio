@@ -1034,15 +1034,6 @@ textarea:focus-visible {
   z-index: 1;
 }
 
-.skill-level {
-  font-size: 0.7rem;
-  letter-spacing: 3px;
-  color: var(--primary);
-  position: relative;
-  z-index: 1;
-  text-shadow: 0 0 6px var(--primary);
-}
-
 /* ===== PROJECTS SECTION ===== */
 .projects {
   background: linear-gradient(
