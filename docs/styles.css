@@ -578,12 +578,14 @@ textarea:focus-visible {
   font-family: "Orbitron", sans-serif;
   font-size: clamp(1.8rem, 5vw, 5.5rem);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 30px;
-  letter-spacing: -3px;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
 }
 
 .title-line {
+  word-spacing: 0.8rem;
   background: linear-gradient(
     135deg,
     var(--light) 0%,
