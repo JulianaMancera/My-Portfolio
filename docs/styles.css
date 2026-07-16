@@ -28,6 +28,52 @@ body {
   line-height: 1.6;
 }
 
+/* ===== ACCESSIBILITY ===== */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  z-index: 10001;
+  background: var(--primary);
+  color: var(--dark);
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 20px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom cursor is a desktop-only enhancement */
+@media (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}
+
 /* ===== BACKGROUND ANIMATION ===== */
 .bg-animation {
   position: fixed;

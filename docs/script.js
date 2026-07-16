@@ -11,20 +11,23 @@ for (let i = 0; i < 30; i++) {
     bgAnimation.appendChild(particle);
 }
 
-//  CUSTOM CURSOR 
+//  CUSTOM CURSOR (desktop only — hidden on touch devices via CSS)
 const cursor = document.getElementById('cursor');
-const hoverElements = document.querySelectorAll('a, button, input, textarea, .project-card, .skill-card, .achievement-card');
+const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
-// Direct cursor positioning for accuracy
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
+if (!isTouchDevice) {
+    const hoverElements = document.querySelectorAll('a, button, input, textarea, .project-card, .skill-card, .achievement-card');
 
-hoverElements.forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-});
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+}
 
 //  LOADING SCREEN 
 window.addEventListener('load', () => {
@@ -143,36 +146,39 @@ document.querySelectorAll('.skill-card, .project-card, .achievement-card, .certi
     observer.observe(el);
 });
 
-// PARALLAX EFFECT 
+// PARALLAX EFFECT (skipped for touch devices and reduced-motion preference)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let ticking = false;
 
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            const scrolled = window.pageYOffset;
-            
-            // Parallax for hero content
-            const heroContent = document.querySelector('.hero-content');
-            if (heroContent) {
-                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-                heroContent.style.opacity = 1 - (scrolled / 800);
-            }
-            
-            // Parallax for section numbers
-            const sectionNumbers = document.querySelectorAll('.section-number');
-            sectionNumbers.forEach(number => {
-                const rect = number.getBoundingClientRect();
-                const scrollProgress = (window.innerHeight - rect.top) / window.innerHeight;
-                if (scrollProgress > 0 && scrollProgress < 1) {
-                    number.style.transform = `translateY(${scrollProgress * 50}px)`;
+if (!prefersReducedMotion) {
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                
+                // Parallax for hero content
+                const heroContent = document.querySelector('.hero-content');
+                if (heroContent) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    heroContent.style.opacity = 1 - (scrolled / 800);
                 }
+                
+                // Parallax for section numbers
+                const sectionNumbers = document.querySelectorAll('.section-number');
+                sectionNumbers.forEach(number => {
+                    const rect = number.getBoundingClientRect();
+                    const scrollProgress = (window.innerHeight - rect.top) / window.innerHeight;
+                    if (scrollProgress > 0 && scrollProgress < 1) {
+                        number.style.transform = `translateY(${scrollProgress * 50}px)`;
+                    }
+                });
+                
+                ticking = false;
             });
-            
-            ticking = false;
-        });
-        ticking = true;
-    }
-});
+            ticking = true;
+        }
+    });
+}
 
 // SKILL CARD REVEAL ANIMATION 
 const skillCards = document.querySelectorAll('.skill-card');
@@ -180,27 +186,29 @@ skillCards.forEach((card, index) => {
     card.style.setProperty('--index', index);
 });
 
-// PROJECT CARD TILT EFFECT 
-const projectCards = document.querySelectorAll('.project-card');
-projectCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+// PROJECT CARD TILT EFFECT (desktop only)
+if (!isTouchDevice) {
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
+        });
         
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
     });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-    });
-});
+}
 
 // SCROLL TO TOP ON PAGE LOAD
 window.addEventListener('beforeunload', () => {
@@ -327,15 +335,17 @@ const hamburgerBtn = document.getElementById('hamburgerBtn');
 const navLinks = document.getElementById('navLinks');
 
 hamburgerBtn.addEventListener('click', () => {
-    hamburgerBtn.classList.toggle('open');
-    navLinks.classList.toggle('open');
-    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : 'auto';
+    const isOpen = navLinks.classList.toggle('open');
+    hamburgerBtn.classList.toggle('open', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
 });
 
 navLinks.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', () => {
         hamburgerBtn.classList.remove('open');
         navLinks.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = 'auto';
     });
 });

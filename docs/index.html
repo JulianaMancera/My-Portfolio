@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juliana R. Mancera - Portfolio</title>
 
-    <meta name="description" content="Portfolio of Juliana R. Mancera — CS student and software developer based in Metro Manila.">
+    <meta name="description" content="Portfolio of Juliana R. Mancera — Software Engineer and Full Stack Mobile/Web Developer based in Metro Manila.">
+    <meta property="og:title" content="Juliana R. Mancera — Software Engineer & Full Stack Mobile/Web Developer">
+    <meta property="og:description" content="Portfolio showcasing full-stack, mobile, and web development projects by Juliana R. Mancera.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/me.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +18,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#home" class="skip-link">Skip to main content</a>
+
     <!-- Animated Background -->
     <div class="bg-animation" id="bgAnimation">
         <div class="grid-overlay"></div>
@@ -39,7 +46,7 @@
     <!-- Navigation -->
     <nav class="nav" id="mainNav">
         <div class="nav-logo">JM</div>
-        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
             <span></span>
             <span></span>
             <span></span>
@@ -75,11 +82,11 @@
     <!-- Home Section -->
     <section class="section home" id="home">
         <div class="hero-content">
-            <div class="hero-label">COMPUTER SCIENCE STUDENT</div>
+            <div class="hero-label">COMPUTER SCIENCE GRADUATE</div>
             <h1 class="hero-title">
                 <span class="title-line">JULIANA MANCERA</span>
             </h1>
-            <p class="hero-subtitle">Software Developer • Full-Stack Engineer</p>
+            <p class="hero-subtitle">Software Engineer • Mobile & Web Developer</p>
             <div class="hero-description">
                 Building scalable, user-friendly systems across full-stack web and mobile — from backend architecture to intuitive interfaces.
             </div>
@@ -110,18 +117,18 @@
             <div class="about-content">
                 <div class="about-image">
                     <div class="image-wrapper">
-                        <img src="assets/me.png" alt="Juliana R. Mancera" class="profile-image">
+                        <img src="assets/me.jpg" alt="Juliana R. Mancera" class="profile-image">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="image-decoration"></div>
                 </div>
                 <div class="about-text">
-                    <h3 class="about-subtitle">BS Computer Science Student at New Era University</h3>
+                    <h3 class="about-subtitle">BS Computer Science Graduate, New Era University</h3>
                     <p class="about-description">
-                        Motivated and reliable Computer Science student with foundational knowledge in software development, full-stack engineering, and Agile methodologies.
+                        BS Computer Science graduate with experience building websites and applications. I have worked on projects that include user interfaces, web layouts, and basic backend tasks.
                     </p>
                     <p class="about-description">
-                        Proven ability to design user-friendly applications and collaborate effectively in team environments. Highly adaptive quick learner eager to build practical software solutions and contribute to real-world products.
+                        I enjoy solving problems, working with teams, and creating useful software that people can rely on. I also like learning new tools and improving the way I build things.
                     </p>
                 </div>
             </div>
@@ -249,7 +256,7 @@
                             <circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="2"/>
                         </svg>
                     </div>
-                    <h3 class="skill-title">AI & Automation</h3>
+                    <h3 class="skill-title">AI-Assisted Development</h3>
                     <div class="skill-list">
                         <div class="skill-item">
                             <span class="skill-name">Prompt Engineering</span>
@@ -558,9 +565,25 @@
                         <div class="cert-icon">✓</div>
                         <span class="cert-name">Oracle Cloud Data Management 2023 Certified Foundations Associate</span>
                     </a>
-                    <a class="certification-item" href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=776C7C6872BB2111549DE97023F5A8A6A5D92E106866F9638CFE75ACF5EABDE8" target="_blank" rel="noopener noreferrer">
+                    <a class="certification-item" href="https://coursera.org/share/d271ecd36f98f13cfbe36444e53aa152" target="_blank" rel="noopener noreferrer">
                         <div class="cert-icon">✓</div>
                         <span class="cert-name">Agile Project Management – Coursera</span>
+                    </a>
+                    <a class="certification-item" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/373055da3128a2abaf160145fd4f0511011af91e" target="_blank" rel="noopener noreferrer">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Software Engineering Principles in Python – Datacamp</span>
+                    </a>
+                    <a class="certification-item" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/63784956c54f87154152ba0c878262394f04fd54" target="_blank" rel="noopener noreferrer">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Data Structures and Algorithms in Python – Datacamp</span>
+                    </a>
+                    <a class="certification-item" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/dd488bb931d37c138cca6dd92df8d34c87abe3cf" target="_blank" rel="noopener noreferrer">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Object-Oriented Programming in Python – Datacamp</span>
+                    </a>
+                    <a class="certification-item" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/3976d7b743e6d116f4b9aa04e4dad8a7669a7e45" target="_blank" rel="noopener noreferrer">
+                        <div class="cert-icon">✓</div>
+                        <span class="cert-name">Introduction to GitHub Concepts – Datacamp</span>
                     </a>
                 </div>
             </div>
