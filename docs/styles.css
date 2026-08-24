@@ -1,13 +1,15 @@
 :root {
-  --primary: #a350a3;
-  --secondary: #c1436d;
-  --accent: #8338ec;
-  --dark: #17131f;
-  --darker: #100b18;
-  --light: #f9f4ff;
-  --gray: #b9b3c7;
-  --card-bg: rgba(18, 16, 28, 0.72);
-  --border: rgba(184, 128, 208, 0.24);
+  --primary: #55d6be;
+  --secondary: #ff8a65;
+  --accent: #7aa2f7;
+  --dark: #101820;
+  --darker: #081016;
+  --light: #f2f7f5;
+  --gray: #aab9ba;
+  --card-bg: rgba(17, 31, 38, 0.78);
+  --border: rgba(137, 184, 181, 0.23);
+  --font-sans: "Manrope", sans-serif;
+  --font-mono: "DM Mono", monospace;
 }
 
 * {
@@ -21,7 +23,7 @@ html {
 }
 
 body {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-sans);
   background: var(--darker);
   color: var(--light);
   overflow-x: hidden;
@@ -255,7 +257,7 @@ textarea:focus-visible {
 }
 
 .loading-logo {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 2rem;
   font-weight: 900;
   margin-bottom: 40px;
@@ -416,7 +418,7 @@ textarea:focus-visible {
 }
 
 .nav-logo {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1.5rem;
   font-weight: 900;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -506,18 +508,19 @@ textarea:focus-visible {
 }
 
 .section-number {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 5rem;
   font-weight: 900;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  opacity: 0.2;
+  opacity: 0.7;
   line-height: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
 }
 
 .section-title {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 3.5rem;
   font-weight: 900;
   color: var(--light);
@@ -561,7 +564,7 @@ textarea:focus-visible {
 
 .hero-content {
   text-align: center;
-  max-width: 1000px;
+  max-width: 960px;
 }
 
 .hero-label {
@@ -575,13 +578,12 @@ textarea:focus-visible {
 }
 
 .hero-title {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: clamp(1.8rem, 5vw, 5.5rem);
   font-weight: 900;
   line-height: 1.2;
   margin-bottom: 30px;
-  letter-spacing: 0.18em;
-  white-space: nowrap;
+  letter-spacing: -0.04em;
 }
 
 .title-line {
@@ -599,11 +601,11 @@ textarea:focus-visible {
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
   color: var(--gray);
   margin-bottom: 30px;
   animation: fadeInUp 0.8s ease 0.7s both;
-  letter-spacing: 2px;
+  letter-spacing: 0;
   font-weight: 300;
 }
 
@@ -614,6 +616,36 @@ textarea:focus-visible {
   margin: 0 auto 50px;
   line-height: 1.8;
   animation: fadeInUp 0.8s ease 0.9s both;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  color: var(--gray);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  animation: fadeInUp 0.8s ease 1.25s both;
+}
+
+.hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hero-meta span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 12px var(--primary);
+}
+
+.hero-meta strong {
+  color: var(--light);
 }
 
 .hero-cta {
@@ -641,7 +673,7 @@ textarea:focus-visible {
   border: 2px solid;
   overflow: hidden;
   transition: all 0.3s ease;
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
 }
 
 .cta-btn.primary {
@@ -855,7 +887,7 @@ textarea:focus-visible {
 }
 
 .stat-number {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 3rem;
   font-weight: 900;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -979,7 +1011,7 @@ textarea:focus-visible {
 }
 
 .skill-title {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1.3rem;
   color: var(--light);
   margin-bottom: 30px;
@@ -1085,7 +1117,7 @@ textarea:focus-visible {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 4rem;
   font-weight: 900;
   color: var(--primary);
@@ -1171,7 +1203,7 @@ textarea:focus-visible {
 }
 
 .project-title {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1.5rem;
   color: var(--light);
   margin-bottom: 10px;
@@ -1265,7 +1297,7 @@ textarea:focus-visible {
 }
 
 .category-title {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1.8rem;
   color: var(--primary);
   margin-bottom: 40px;
@@ -1326,7 +1358,7 @@ textarea:focus-visible {
 }
 
 .achievement-year {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--primary);
   margin-bottom: 15px;
@@ -1603,7 +1635,7 @@ textarea:focus-visible {
   border: 1px solid var(--border);
   border-radius: 10px;
   color: var(--light);
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -1628,7 +1660,7 @@ textarea:focus-visible {
   border: none;
   border-radius: 10px;
   color: var(--dark);
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -1693,7 +1725,7 @@ textarea:focus-visible {
 }
 
 .footer-logo {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1.5rem;
   font-weight: 900;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -1836,11 +1868,17 @@ textarea:focus-visible {
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .hero-description {
     font-size: 1rem;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
   .hero-cta {

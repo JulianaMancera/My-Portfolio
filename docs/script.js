@@ -1,21 +1,23 @@
 // PARTICLE BACKGROUND 
 const bgAnimation = document.getElementById('bgAnimation');
-// Reduced from 80 to 30 particles for better performance
-for (let i = 0; i < 30; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 15 + 's';
-    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-    bgAnimation.appendChild(particle);
+if (bgAnimation) {
+    // Reduced from 80 to 30 particles for better performance
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        bgAnimation.appendChild(particle);
+    }
 }
 
 //  CUSTOM CURSOR (desktop only — hidden on touch devices via CSS)
 const cursor = document.getElementById('cursor');
 const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
-if (!isTouchDevice) {
+if (cursor && !isTouchDevice) {
     const hoverElements = document.querySelectorAll('a, button, input, textarea, .project-card, .skill-card, .achievement-card');
 
     document.addEventListener('mousemove', (e) => {
@@ -29,12 +31,20 @@ if (!isTouchDevice) {
     });
 }
 
-//  LOADING SCREEN 
+//  LOADING SCREEN AND FADE-IN
 window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loadingScreen');
+
+    if (loadingScreen) {
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }, 700);
+    }
+
     setTimeout(() => {
-        document.getElementById('loadingScreen').classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    }, 2500);
+        document.body.style.opacity = '1';
+    }, 100);
 });
 
 //  SMOOTH SCROLL 
@@ -87,43 +97,54 @@ window.addEventListener('scroll', () => {
 });
 
 // CONTACT FORM
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    const form = e.target;
-    const submitBtn = form.querySelector('.submit-btn');
-    const originalHTML = submitBtn.innerHTML;
+        const form = e.target;
+        const submitBtn = form.querySelector('.submit-btn');
+        const originalHTML = submitBtn ? submitBtn.innerHTML : 'SEND MESSAGE';
 
-    submitBtn.innerHTML = '<span>SENDING...</span>';
-    submitBtn.disabled = true;
-
-    try {
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-            submitBtn.innerHTML = '<span>MESSAGE SENT! ✓</span>';
-            form.reset();
-            setTimeout(() => {
-                submitBtn.innerHTML = originalHTML;
-                submitBtn.disabled = false;
-            }, 3000);
-        } else {
-            throw new Error('Server error');
+        if (submitBtn) {
+            submitBtn.innerHTML = '<span>SENDING...</span>';
+            submitBtn.disabled = true;
         }
-    } catch {
-        submitBtn.innerHTML = '<span>FAILED. TRY AGAIN.</span>';
-        submitBtn.style.background = 'linear-gradient(135deg, #c1436d, #8338ec)';
-        setTimeout(() => {
-            submitBtn.innerHTML = originalHTML;
-            submitBtn.style.background = '';
-            submitBtn.disabled = false;
-        }, 3000);
-    }
-});
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                if (submitBtn) {
+                    submitBtn.innerHTML = '<span>MESSAGE SENT! ✓</span>';
+                }
+                form.reset();
+                setTimeout(() => {
+                    if (submitBtn) {
+                        submitBtn.innerHTML = originalHTML;
+                        submitBtn.disabled = false;
+                    }
+                }, 3000);
+            } else {
+                throw new Error('Server error');
+            }
+        } catch {
+            if (submitBtn) {
+                submitBtn.innerHTML = '<span>FAILED. TRY AGAIN.</span>';
+                submitBtn.style.background = 'linear-gradient(135deg, #c1436d, #8338ec)';
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }
+        }
+    });
+}
 
 // INTERSECTION OBSERVER FOR ANIMATIONS
 const observerOptions = {
@@ -210,11 +231,6 @@ if (!isTouchDevice) {
     });
 }
 
-// SCROLL TO TOP ON PAGE LOAD
-window.addEventListener('beforeunload', () => {
-    window.scrollTo(0, 0);
-});
-
 // PREVENT SCROLL DURING LOADING
 document.body.style.overflow = 'hidden';
 
@@ -230,33 +246,6 @@ glitchElements.forEach(element => {
     });
 });
 
-// DEBOUNCE FUNCTION
-function debounce(func, wait = 10) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// PERFORMANCE OPTIMIZATION
-const debouncedScroll = debounce(() => {
-    // Additional scroll logic here if needed
-}, 10);
-
-window.addEventListener('scroll', debouncedScroll);
-
-// FADE IN ON LOAD 
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
 // DYNAMIC YEAR FOR FOOTER
 const currentYear = new Date().getFullYear();
 const footerCopyright = document.querySelector('.footer-copyright');
@@ -264,21 +253,7 @@ if (footerCopyright) {
     footerCopyright.textContent = `© ${currentYear} Juliana R. Mancera. All rights reserved.`;
 }
 
-// SKILL LEVEL ANIMATION
-const skillLevels = document.querySelectorAll('.skill-level');
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'pulse 2s ease-in-out infinite';
-        }
-    });
-}, { threshold: 0.5 });
-
-skillLevels.forEach(level => {
-    skillObserver.observe(level);
-});
-
-//FORM VALIDATION
+// FORM VALIDATION
 const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
 formInputs.forEach(input => {
     input.addEventListener('blur', () => {
@@ -334,21 +309,23 @@ statNumbers.forEach(stat => {
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const navLinks = document.getElementById('navLinks');
 
-hamburgerBtn.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    hamburgerBtn.classList.toggle('open', isOpen);
-    hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-});
-
-navLinks.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('click', () => {
-        hamburgerBtn.classList.remove('open');
-        navLinks.classList.remove('open');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = 'auto';
+if (hamburgerBtn && navLinks) {
+    hamburgerBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        hamburgerBtn.classList.toggle('open', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : 'auto';
     });
-});
+
+    navLinks.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            hamburgerBtn.classList.remove('open');
+            navLinks.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = 'auto';
+        });
+    });
+}
 
 // CONSOLE MESSAGE
 console.log('%c🚀 Portfolio by Juliana R. Mancera', 'font-size: 20px; font-weight: bold; color: #00F5FF;');
