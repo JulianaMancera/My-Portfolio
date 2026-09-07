@@ -1467,6 +1467,77 @@ textarea:focus-visible {
   background: rgba(163, 80, 163, 0.05);
 }
 
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 20px;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.badge-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 28px rgba(163, 80, 163, 0.12);
+}
+
+.badge-mark {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #06141d;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.badge-blue {
+  background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+}
+
+.badge-green {
+  background: linear-gradient(135deg, #86efac, #4ade80);
+}
+
+.badge-gold {
+  background: linear-gradient(135deg, #fef3c7, #fbbf24);
+}
+
+.badge-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.badge-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--light);
+  line-height: 1.4;
+}
+
+.badge-source {
+  font-size: 0.8rem;
+  color: var(--gray);
+  letter-spacing: 0.04em;
+}
+
 .cert-icon {
   width: 30px;
   height: 30px;
