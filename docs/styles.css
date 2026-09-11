@@ -1177,33 +1177,6 @@ textarea:focus-visible {
   transform: scale(1.05);
 }
 
-.project-icon {
-  width: 80px;
-  height: 80px;
-  color: var(--primary);
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.project-card:hover .project-icon {
-  transform: scale(1.1) rotate(5deg);
-  color: var(--secondary);
-}
-
-.project-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.thecics-project .project-icon {
-  display: none;
-}
-
-.projects-grid > .project-card:first-child .project-icon {
-  display: none;
-}
-
 .project-info {
   padding: 35px;
   position: relative;
