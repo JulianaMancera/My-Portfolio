@@ -1079,7 +1079,7 @@ textarea:focus-visible {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px;
 }
 
@@ -1194,6 +1194,14 @@ textarea:focus-visible {
 .project-icon svg {
   width: 100%;
   height: 100%;
+}
+
+.thecics-project .project-icon {
+  display: none;
+}
+
+.projects-grid > .project-card:first-child .project-icon {
+  display: none;
 }
 
 .project-info {
